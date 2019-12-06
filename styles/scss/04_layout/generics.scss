@@ -1,0 +1,20 @@
+a{
+    text-decoration: none;
+    color: $text_1;
+    @include media('tablet'){
+       &:hover{
+        color: $text;
+       } 
+    }
+}
+.text{
+    &-center{
+        text-align: center;
+    }
+    &-left{
+        text-align: left;
+    }
+    &-right{
+        text-align: right;
+    }
+}

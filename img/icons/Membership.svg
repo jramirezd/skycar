@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/Line/Membership</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M12.8891637,1 L3.11138589,1 C3.00027478,1 2.89471923,1.05555556 2.83360811,1.15 L0.0558303366,5.23888889 C-0.0247252189,5.36111111 -0.0163918856,5.52222222 0.0752747811,5.63333333 L7.74194145,15.1 C7.87527478,15.2638889 8.12527478,15.2638889 8.25860811,15.1 L15.9252748,5.63333333 C16.0169414,5.51944444 16.0252748,5.36111111 15.9447192,5.23888889 L13.1697192,1.15 C13.1058303,1.05555556 13.0030526,1 12.8891637,1 Z M12.3530526,2.33333333 L14.1113859,5 L12.2113859,5 L10.7752748,2.33333333 L12.3530526,2.33333333 Z M6.73916367,2.33333333 L9.25860811,2.33333333 L10.6947192,5 L5.30583034,5 L6.73916367,2.33333333 Z M3.647497,2.33333333 L5.22527478,2.33333333 L3.78916367,5 L1.88916367,5 L3.647497,2.33333333 Z M2.45305256,6.33333333 L3.88083034,6.33333333 L5.77805256,10.7777778 L2.45305256,6.33333333 Z M5.31138589,6.33333333 L10.6891637,6.33333333 L8.00027478,13.0916667 L5.31138589,6.33333333 Z M10.222497,10.7777778 L12.1169414,6.33333333 L13.5447192,6.33333333 L10.222497,10.7777778 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/Line/Membership" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Membership" fill-opacity="0" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="👷‍♂️Atoms/Colour/Dark-Grey/100%" mask="url(#mask-2)" fill="#7F8FA4">
+            <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,29 @@
+button{
+    padding: 16px;
+    color: #fff;
+    background-color: $pc;
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    @media only screen and (min-width: $tablet){
+      cursor: pointer;
+      &:hover{
+        background-color: $sc;
+        color: white;
+      }
+    }
+  }
+.big-cta{
+    background-color: $pc;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+.btn-transparent{
+    font-size: $f-14;
+    background-color: transparent;
+    text-align: center;
+    line-height: $f-22;
+    border: 1px solid $lines;
+    border-radius: 4px;
+}

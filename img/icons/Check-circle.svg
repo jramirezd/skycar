@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/Solid/Check-circle</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M16,8 C16,12.4182903 12.4182903,16 8,16 C3.58170968,16 0,12.4182903 0,8 C0,3.58170968 3.58170968,0 8,0 C12.4182903,0 16,3.58170968 16,8 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/Solid/Check-circle" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Path" fill="#000000" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="👷‍♂️Atoms/Colour/Dark-Grey/100%" mask="url(#mask-2)" fill="#7F8FA4">
+            <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+        </g>
+        <path d="M7.28285,10.8485188 L11.88285,6.24851875 C12.03905,6.09231875 12.03905,5.83904375 11.88285,5.68284375 L11.317175,5.11716875 C11.160975,4.96094375 10.9077,4.96094375 10.751475,5.11716875 L7,8.86861875 L5.248525,7.11714375 C5.092325,6.96094375 4.83905,6.96094375 4.682825,7.11714375 L4.11715,7.68281875 C3.96095,7.83901875 3.96095,8.09229375 4.11715,8.24849375 L6.71715,10.8484937 C6.873375,11.0047188 7.126625,11.0047188 7.28285,10.8485188 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero" mask="url(#mask-2)"></path>
+    </g>
+</svg>

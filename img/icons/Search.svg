@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/Line/Search</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M11.6874897,10.6182258 L15.7785482,14.7092843 C16.0738173,15.0045534 16.0738173,15.4832791 15.7785482,15.7785482 C15.4832791,16.0738173 15.0045534,16.0738173 14.7092843,15.7785482 L10.6182258,11.6874897 C9.5009304,12.5733817 8.0878569,13.1024335 6.55121675,13.1024335 C2.93307965,13.1024335 0,10.1693539 0,6.55121675 C0,2.93307965 2.93307965,-7.10542736e-15 6.55121675,-7.10542736e-15 C10.1693539,-7.10542736e-15 13.1024335,2.93307965 13.1024335,6.55121675 C13.1024335,8.0878569 12.5733817,9.5009304 11.6874897,10.6182258 Z M6.55121675,11.590266 C9.3342068,11.590266 11.590266,9.3342068 11.590266,6.55121675 C11.590266,3.76822671 9.3342068,1.51216752 6.55121675,1.51216752 C3.76822671,1.51216752 1.51216752,3.76822671 1.51216752,6.55121675 C1.51216752,9.3342068 3.76822671,11.590266 6.55121675,11.590266 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/Line/Search" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Search" fill-opacity="0" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="👷‍♂️Atoms/Colour/Dark-Grey/100%" mask="url(#mask-2)" fill="#7F8FA4">
+            <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,30 @@
+//VARIABLES
+@import "01_variables/breakpoints";
+@import "01_variables/colours";
+@import "01_variables/fontsize";
+@import "01_variables/spacing";
+@import "01_variables/typography";
+
+//MIXINS
+@import "02_mixins/media";
+@import "02_mixins/mixins";
+
+// TOOLS
+@import "03_tools/animations";
+@import "03_tools/clearfix";
+@import "03_tools/flexbox";
+@import "03_tools/normalize";
+@import "03_tools/reset";
+@import "03_tools/utilities";
+@import "03_tools/visibility";
+@import "03_tools/z-index";
+
+// LAYOUT
+@import "04_layout/generics";
+@import "04_layout/header";
+@import "04_layout/main";
+@import "04_layout/footer";
+
+//ATOMS
+@import "05_atoms/buttons";
+@import "05_atoms/inputs";

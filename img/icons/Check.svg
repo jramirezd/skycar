@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/Line/Check</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M7.00290648,12.8036315 L14.7136973,5.09284065 C14.975529,4.83100901 14.975529,4.40645454 14.7136973,4.1446229 L13.7654796,3.19640516 C13.503648,2.93453161 13.0790935,2.93453161 12.8172199,3.19640516 L6.52877665,9.48480655 L3.59285112,6.54888102 C3.33101948,6.28704938 2.90646502,6.28704938 2.64459147,6.54888102 L1.69637373,7.49709876 C1.43454209,7.7589304 1.43454209,8.18348487 1.69637373,8.44531651 L6.05464683,12.8035896 C6.31652037,13.0654631 6.74103293,13.0654631 7.00290648,12.8036315 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/Line/Check" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Check" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="👷‍♂️Atoms/Colour/Dark-Grey/100%" mask="url(#mask-2)" fill="#7F8FA4">
+            <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+        </g>
+    </g>
+</svg>

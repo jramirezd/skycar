@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/Line/Arrrow-left</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M5.44483552,7.65014828 L9.45035437,3.64483552 C9.6434684,3.45172149 9.95673769,3.45172149 10.1498517,3.64483552 L10.6170764,4.11206018 C10.8099843,4.30496811 10.8101904,4.61741301 10.6179008,4.81073314 L7.44336993,7.99989695 L10.6176947,11.1892669 C10.8101904,11.382587 10.8097782,11.6950319 10.6168703,11.8879398 L10.1496456,12.3551645 C9.9565316,12.5482785 9.64326231,12.5482785 9.45014828,12.3551645 L5.44483552,8.34964563 C5.25172149,8.1565316 5.25172149,7.84326231 5.44483552,7.65014828 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/Line/Arrrow-left" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Arrow-left" fill-opacity="0" fill="#FFFFFF" xlink:href="#path-1"></use>
+        <g id="👷‍♂️Atoms/Colour/Dark-Grey/100%" mask="url(#mask-2)" fill="#7F8FA4">
+            <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+        </g>
+    </g>
+</svg>

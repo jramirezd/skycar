@@ -1,0 +1,25 @@
+header{
+    width: 100%;
+    display: flex;
+    .logo{
+        margin: $s-8;
+        img{
+            max-width: 136px;
+        }
+    }
+    nav{
+        display: flex;
+        margin-left: auto;
+        a{
+            display: block;
+            &.big-cta{
+                padding: $s-16 $s-24;
+                line-height: $s-32;
+            }
+            &.btn-transparent{
+                margin: 12px;
+                padding: $s-8 $s-16;
+            }
+        }
+    }
+}

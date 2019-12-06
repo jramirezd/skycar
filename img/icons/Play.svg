@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/Solid/Play</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M14.2276195,6.87570884 L3.23063778,0.190043786 C2.24340873,-0.359805302 1,0.346250914 1,1.50218366 L1,14.4986167 C1,15.6483011 2.23716045,16.3606056 3.23063778,15.8107565 L14.2276195,9.49998858 C15.2523383,8.93139464 15.2523383,7.45055107 14.2276195,6.87570884 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/Solid/Play" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Play" fill-opacity="0" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="👷‍♂️Atoms/Colour/Dark-Grey/100%" mask="url(#mask-2)" fill="#7F8FA4">
+            <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/Solid/Facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M6.396875,16 L6.396875,8.84375 L4,8.84375 L4,6 L6.396875,6 L6.396875,3.759375 C6.396875,1.325 7.884375,0 10.05625,0 C11.096875,0 11.990625,0.078125 12.25,0.1125 L12.25,2.65625 L10.74375,2.65625 C9.5625,2.65625 9.334375,3.21875 9.334375,4.040625 L9.334375,6 L12,6 L11.634375,8.84375 L9.334375,8.84375 L9.334375,16" id="path-1"></path>
+    </defs>
+    <g id="Icons/Solid/Facebook" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Facebook" fill-opacity="0" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="👷‍♂️Atoms/Colour/Dark-Grey/100%" mask="url(#mask-2)" fill="#7F8FA4">
+            <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/Line/Pros-Circle-Line</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M8,0 C3.58203226,0 0,3.58332258 0,8 C0,12.4192581 3.58203226,16 8,16 C12.4179677,16 16,12.4192581 16,8 C16,3.58332258 12.4179677,0 8,0 Z M8,14.4516129 C4.43445161,14.4516129 1.5483871,11.5667419 1.5483871,8 C1.5483871,4.43564516 4.43458065,1.5483871 8,1.5483871 C11.5642258,1.5483871 14.4516129,4.43454839 14.4516129,8 C14.4516129,11.5654839 11.5667419,14.4516129 8,14.4516129 Z M5.375,7 L10.625,7 C11.1082492,7 11.5,7.39175084 11.5,7.875 C11.5,8.35824916 11.1082492,8.75 10.625,8.75 L5.375,8.75 C4.89175084,8.75 4.5,8.35824916 4.5,7.875 C4.5,7.39175084 4.89175084,7 5.375,7 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/Line/Pros-Circle-Line" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Pros-Circle-Line" fill-opacity="0" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="👷‍♂️Atoms/Colour/Dark-Grey/100%" mask="url(#mask-2)" fill="#7F8FA4">
+            <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+        </g>
+    </g>
+</svg>

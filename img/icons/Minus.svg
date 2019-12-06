@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/Line/Minus</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M15,9 L1,9 C0.446875,9 0,8.553125 0,8 C0,7.446875 0.446875,7 1,7 L15,7 C15.553125,7 16,7.446875 16,8 C16,8.553125 15.553125,9 15,9 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/Line/Minus" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Minus" fill-opacity="0" fill="#FFFFFF" xlink:href="#path-1"></use>
+        <g id="👷‍♂️Atoms/Colour/Dark-Grey/100%" mask="url(#mask-2)" fill="#7F8FA4">
+            <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+        </g>
+    </g>
+</svg>

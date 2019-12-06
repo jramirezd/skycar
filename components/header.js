@@ -1,21 +1,25 @@
 import Link from 'next/link';
+import logo from '../img/logo.svg';
 
-const linkStyle = {
-  marginRight: 15
-};
+const { loged, logedState } = true;
 
+console.log(logedState);
 const Header = () => (
+  <header>
+  <div className="logo">
+  <Link href="/">
+    <a><img src={logo}/></a>
+  </Link>
+  </div>
   <nav>
-    <Link href="/">
-      <a style={linkStyle}>Inicio</a>
-    </Link>
     <Link href="/about">
-      <a style={linkStyle}>Pelis pelis</a>
+      <a className="btn-transparent">Iniciar sesión</a>
     </Link>
-    <Link href="/favorites">
-      <a style={linkStyle}>Favoritas</a>
+    <Link  href="/login">
+      <a className="big-cta">Vende tu coche</a>
     </Link>
   </nav>
+  </header>
 );
 
 export default Header;

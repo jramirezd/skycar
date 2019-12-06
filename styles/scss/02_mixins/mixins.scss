@@ -1,0 +1,248 @@
+// Prefixing full control over prefixes @include prefix('box-sizing', 'border-box', moz webkit);
+@mixin prefix($property, $value, $vendors: webkit moz ms o, $default: true) {
+    @if $vendors {
+      @each $vendor in $vendors {
+        #{"-" + $vendor + "-" + $property}: #{$value};
+      }
+    }
+    @if $default {
+      #{$property}: #{$value};
+    }
+  }
+
+// Box Shadow @include box-shadow(8px, 8px, 0px, 0px, #);
+@mixin box-shadow( $h: 10px , $v: 10px , $b: 0px , $s: 0px , $c: #000000 ) {
+    -webkit-box-shadow: $h $v $b $s $c;
+    -moz-box-shadow: $h $v $b $s $c;
+    box-shadow: $h $v $b $s $c;
+}
+
+// When using ::before and ::after you'll always need these three.  @include pseudo;
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+// This mixin takes all the hassle out of creating that triangle
+// @include triangle(black, up, 10px);
+@mixin triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
+    @include pseudo($pos: $position);
+    width: 0;
+    height: 0;
+    @if $round {
+        border-radius: 3px;
+    }
+    @if $direction == down {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-top: $size solid $color;
+        margin-top: 0 - round( $size / 2.5 );
+        bottom: -$size;
+    } @else if $direction == up {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+        margin-bottom: 0 - round( $size / 2.5 );
+        top: -$size;
+    } @else if $direction == right {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+        margin-right: -$size;
+        right: -$size;
+    } @else if  $direction == left {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-right: $size solid $color;
+        margin-left: -$size;
+        left: -$size;
+    }
+}
+
+// truncate @include truncate(90%);
+@mixin truncate($truncation-boundary) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// Functions to add the respective positioning to the elements
+@mixin position($position, $args) {
+    @each $o in top right bottom left {
+      $i: index($args, $o);
+      @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number {
+        #{$o}: nth($args, $i + 1);
+      }
+    }
+    position: $position;
+  }
+  
+  // @include absolute(top 100% left 0)
+  @mixin absolute($args: '') {
+    @include position(absolute, $args);
+  }
+  // @include fixed(top 0 left 0);
+  @mixin fixed($args: '') {
+    @include position(fixed, $args);
+  }
+  
+  // @include relative;
+  @mixin relative($args: '') {
+    @include position(relative, $args);
+  }
+  
+  // @include sticky(top 10px height 200px)
+  @mixin sticky($args: '') {
+    @include position(sticky, $args);
+  }
+
+  // Centering a block @include center-block;
+  @mixin center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // Vertical centering @include center-vertically;
+  @mixin center-vertically {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include prefix(transform, translate(-50%, -50%), 'webkit' 'ms');
+  }
+  
+  // Padding Loops
+    $max: 48;
+    $offset: 4;
+    $unit: 'px';
+    @mixin list-loop($className, $styleName) {
+    $i: 0;
+        @while $i <= $max {
+            #{$className + $i} { 
+            #{$styleName}: #{$i + $unit};
+            }
+            $i: $i + $offset;
+        }
+    }
+    // Margins
+    @include list-loop('.m-t-', 'margin-top');
+    @include list-loop('.m-r-', 'margin-right');
+    @include list-loop('.m-b-', 'margin-bottom');
+    @include list-loop('.m-l-', 'margin-left');
+    @include list-loop('.m-x-', 'margin');
+    // Paddings
+    @include list-loop('.p-t-', 'padding-top');
+    @include list-loop('.p-r-', 'padding-right');
+    @include list-loop('.p-b-', 'padding-bottom');
+    @include list-loop('.p-l-', 'padding-left');
+    @include list-loop('.p-x-', 'padding');
+
+
+// Background image @include bg-image(white, "/img/web/home/home-hero-dk.png", no-repeat, center center, cover);
+@mixin bg-image( $color, $url, $repeat: no-repeat, $position: center center, $size: cover ) {
+    background-color: $color;
+    background-image: url($url);
+    background-repeat: $repeat;
+    background-position: $position;
+    background-size: $size;
+}
+
+// Hover effect on card, pill ...
+@mixin hover-effect($c: $light-hover, $c_hover: $dark-hover) {
+    cursor: pointer;
+    @include box-shadow(0, 3px, 3px, 1px, $c);
+    @include prefix('transition', '.3s ease-in-out', moz webkit ms o);
+    @include media(tablet) {
+        &:hover {
+            @include prefix('transform', 'translateY(-1px)', moz webkit ms o);
+            @include box-shadow(0, 3px, 3px, 1px, $c_hover);
+        }
+    }   
+}
+
+// Ellipsis multiline on text
+// @include ellipsis-multiline(14, 1.6, 2);
+@mixin ellipsis-multiline($font-size, $line-height, $lines-to-show, $margin:"0"){
+    $height-calc: $font-size * $line-height * $lines-to-show;
+    position: relative;
+    display: block;
+    display: -webkit-box;
+    max-height: ($height-calc + $margin) * 1px;
+    font-size: $font-size * 1px;
+    line-height: $line-height;
+    -webkit-line-clamp: $lines-to-show;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    p {
+        display: none;
+        &:first-of-type{
+            display: block;
+        }
+    }
+    ul {
+        display: none;
+        &:only-child{
+            display: block;
+        }
+    }
+}
+
+// Deleting ellipsis mixin
+// @include no-ellipsis();
+@mixin no-ellipsis() {
+    height: auto !important;
+    max-height: none !important;
+    -webkit-line-clamp: initial !important;
+    p, ul{
+        display: block !important;
+    }
+}
+
+// Custom scrollbar
+// Use this mixin when you need to custom the color of your scrollbar, also useful if you want to hide it
+//@include scrollbar($gray);
+@mixin scrollbar($color: $white) {
+    &::-webkit-scrollbar {
+        width: 0;
+        background-color: $color;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: $color;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: $color;
+    }
+}
+
+// Card layout
+@mixin card-layout($c: $light-hover, $bg: white, $opt: shadow) {
+    @include prefix('transition', '.3s ease-in-out');
+    background-color: $bg;
+    border-radius: 10px;
+    @if $opt == border {
+        border: 1px solid $border;
+    } @else if $opt == shadow {
+        @include box-shadow(0, 3px, 3px, 1px, $c);
+    } @else if $opt == pro-shadow {
+        @include box-shadow(0, 1px, 5px, 2px, $c);
+    }
+}
+
+// Icomoon font style
+@mixin iconFontStyle() {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/Solid//Star</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M15.152253,5.41978142 L10.791059,4.78396053 L8.84180522,0.83172172 C8.49255149,0.127244108 7.48061119,0.118288884 7.12837238,0.83172172 L5.17911865,4.78396053 L0.817924623,5.41978142 C0.0358350708,5.53321426 -0.277597765,6.49739336 0.289566414,7.04963217 L3.44479029,10.124259 L2.69852164,14.4675426 C2.56419328,15.2526172 3.39105895,15.8406769 4.08359626,15.4735128 L7.9850888,13.4227665 L11.8865813,15.4735128 C12.5791187,15.8376919 13.4059843,15.2526172 13.271656,14.4675426 L12.5253873,10.124259 L15.6806112,7.04963217 C16.2477754,6.49739336 15.9343425,5.53321426 15.152253,5.41978142 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/Solid//Star" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Star" fill-opacity="0" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="👷‍♂️Atoms/Colour/Dark-Grey/100%" mask="url(#mask-2)" fill="#7F8FA4">
+            <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+        </g>
+    </g>
+</svg>

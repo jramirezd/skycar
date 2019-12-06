@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/Solid/Diamond</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M13.4861111,1 L16,5.44444444 L13.1916667,5.44444444 L11.2694444,1 L13.4861111,1 Z M9.93055556,1 L11.8527778,5.44444444 L4.14722222,5.44444444 L6.06944444,1 L9.93055556,1 Z M2.51388889,1 L4.73055556,1 L2.80833333,5.44444444 L0,5.44444444 L2.51388889,1 Z M0,6.33333333 L2.79722222,6.33333333 L6.21388889,13.325 C6.25555556,13.4111111 6.13888889,13.4888889 6.075,13.4166667 L0,6.33333333 Z M4.11666667,6.33333333 L11.8833333,6.33333333 L8.07777778,15.1722222 C8.05,15.2388889 7.95277778,15.2388889 7.925,15.1722222 L4.11666667,6.33333333 Z M9.78611111,13.325 L13.2027778,6.33333333 L16,6.33333333 L9.925,13.4138889 C9.86111111,13.4888889 9.74444444,13.4111111 9.78611111,13.325 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/Solid/Diamond" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Diamond" fill-opacity="0" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="👷‍♂️Atoms/Colour/Dark-Grey/100%" mask="url(#mask-2)" fill="#7F8FA4">
+            <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+        </g>
+    </g>
+</svg>

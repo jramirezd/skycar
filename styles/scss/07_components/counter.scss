@@ -1,0 +1,24 @@
+.counter{
+    margin: 24px auto;
+    max-width: 150px;
+    .num{
+        border: 1px solid #d4d4d4;
+        padding: 12px;
+        margin: 8px;
+        text-align: center;
+        line-height: 56px;
+        font-size: 42px;
+        border-radius: 4px;
+        &.red{
+            border: 1px solid $tc;
+            color: $tc;
+
+        }
+    }
+    .buttons{
+        button{
+            margin: 0 8px;
+            width: 27px;
+        }
+    }
+}

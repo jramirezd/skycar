@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MovieApi from '../services/MovieApi';
 import Layout from '../components/layout';
+import Head from 'next/head'
 
 export default function Index() {
   const [movies, setMovies] = useState([]);
@@ -30,6 +31,10 @@ export default function Index() {
 
   useEffect(()=>{onSearch()}, []);
   return (
+    <>
+     <Head>
+    <title>SkyCars - La plataforma de carcharing de los Skylabers</title>
+    </Head>
     <Layout>
       <h1>Pelis Pelis</h1>
       <p>
@@ -41,5 +46,6 @@ export default function Index() {
         })}
        </ul>
     </Layout>
+    </>
   );
 }

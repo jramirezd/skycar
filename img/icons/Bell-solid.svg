@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/Solid/Bell-solid</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M8.00002161,16 C9.10377161,16 9.99908411,15.1046875 9.99908411,14 L6.00095911,14 C6.00095911,15.1046875 6.89627161,16 8.00002161,16 Z M14.7309591,11.3215625 C14.1272091,10.6728125 12.9975216,9.696875 12.9975216,6.5 C12.9975216,4.071875 11.2950216,2.128125 8.99939661,1.65125 L8.99939661,1 C8.99939661,0.4478125 8.55189661,0 8.00002161,0 C7.44814661,0 7.00064661,0.4478125 7.00064661,1 L7.00064661,1.65125 C4.70502161,2.128125 3.00252161,4.071875 3.00252161,6.5 C3.00252161,9.696875 1.87283411,10.6728125 1.26908411,11.3215625 C1.08158411,11.523125 0.998459106,11.7640625 1.00002161,12 C1.00345911,12.5125 1.40564661,13 2.00314661,13 L13.9968966,13 C14.5943966,13 14.9968966,12.5125 15.0000216,12 C15.0015841,11.7640625 14.9184591,11.5228125 14.7309591,11.3215625 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/Solid/Bell-solid" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Bell" fill-opacity="0" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="👷‍♂️Atoms/Colour/Dark-Grey/100%" mask="url(#mask-2)" fill="#7F8FA4">
+            <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+        </g>
+    </g>
+</svg>

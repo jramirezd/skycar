@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/Line/Plus-Circle-Line</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M8,0 C3.58203226,0 0,3.58332258 0,8 C0,12.4192581 3.58203226,16 8,16 C12.4179677,16 16,12.4192581 16,8 C16,3.58332258 12.4179677,0 8,0 Z M8,14.4516129 C4.43445161,14.4516129 1.5483871,11.5667419 1.5483871,8 C1.5483871,4.43564516 4.43458065,1.5483871 8,1.5483871 C11.5642258,1.5483871 14.4516129,4.43454839 14.4516129,8 C14.4516129,11.5654839 11.5667419,14.4516129 8,14.4516129 Z M7.125,7.125 L7.125,5.375 C7.125,4.89175084 7.51675084,4.5 8,4.5 C8.48324916,4.5 8.875,4.89175084 8.875,5.375 L8.875,7.125 L10.625,7.125 C11.1082492,7.125 11.5,7.51675084 11.5,8 C11.5,8.48324916 11.1082492,8.875 10.625,8.875 L8.875,8.875 L8.875,10.625 C8.875,11.1082492 8.48324916,11.5 8,11.5 C7.51675084,11.5 7.125,11.1082492 7.125,10.625 L7.125,8.875 L5.375,8.875 C4.89175084,8.875 4.5,8.48324916 4.5,8 C4.5,7.51675084 4.89175084,7.125 5.375,7.125 L7.125,7.125 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/Line/Plus-Circle-Line" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Plus-Circle-Line" fill-opacity="0" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="👷‍♂️Atoms/Colour/Dark-Grey/100%" mask="url(#mask-2)" fill="#7F8FA4">
+            <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+        </g>
+    </g>
+</svg>

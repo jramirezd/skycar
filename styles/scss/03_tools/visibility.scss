@@ -1,0 +1,27 @@
+// @include opacity(.4);
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity = $opacity-ie); //IE8
+  }
+
+.hidden{
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}
+
+.hide-none{
+	display: none;
+}
+
+.invisible{
+	opacity: 0;
+}
+
+.visible{
+	opacity: 1;
+}

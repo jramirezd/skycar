@@ -1,0 +1,53 @@
+  // @include keyframes(animate) {
+  //  50% {
+  //      transform: rotate(90deg);
+  //    }
+  //}
+  @mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+      @content;
+    }
+  
+    @-moz-keyframes #{$name} {
+      @content;
+    }
+  
+    @keyframes #{$name} {
+      @content;
+    }
+  }
+
+  @mixin animation ($animation:false, $duration:false, $delay:false, $fillmode:forwards) {
+    @if $animation {
+      -webkit-animation-name: $animation;
+      -moz-animation-name: $animation;
+      -o-animation-name: $animation;
+      animation-name: $animation;
+    }
+    @if $duration {
+      -webkit-animation-duration: $duration;
+      -moz-animation-duration: $duration;
+      -o-animation-duration: $duration;
+      animation-duration: $duration;
+    }  
+    
+    @if $delay {
+      -webkit-animation-delay: $delay;
+      -moz-animation-delay: $delay;
+      -o-animation-delay: $delay;
+      animation-delay: $delay;
+    }
+    @if $fillmode {
+      -webkit-animation-fill-mode: $fillmode;
+      -moz-animation-fill-mode: $fillmode;
+      -o-animation-fill-mode: $fillmode;
+      animation-fill-mode: $fillmode;
+  }
+}
+  @mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+  }
