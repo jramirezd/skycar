@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
-    <title>Icons/Line/Long-arrow-right</title>
-    <desc>Created with Sketch.</desc>
     <defs>
         <path d="M7.38166667,1.61833333 L7.38166667,1.61833333 C7.0401706,1.9598294 7.0401706,2.51350393 7.38166667,2.855 L11.6516667,7.125 L1.875,7.125 C1.39175084,7.125 1,7.51675084 1,8 L1,8 C1,8.48324916 1.39175084,8.875 1.875,8.875 L11.6516667,8.875 L7.38166667,13.145 C7.0401706,13.4864961 7.0401706,14.0401706 7.38166667,14.3816667 L7.38166667,14.3816667 C7.72316274,14.7231627 8.27683726,14.7231627 8.61833333,14.3816667 L14.2928932,8.70710678 C14.6834175,8.31658249 14.6834175,7.68341751 14.2928932,7.29289322 L8.61833333,1.61833333 C8.27683726,1.27683726 7.72316274,1.27683726 7.38166667,1.61833333 Z" id="path-1"></path>
     </defs>
@@ -11,7 +8,7 @@
             <use xlink:href="#path-1"></use>
         </mask>
         <use id="Long-arrow-right" fill-opacity="0" fill="#FFFFFF" xlink:href="#path-1"></use>
-        <g id="👷‍♂️Atoms/Colour/Dark-Grey/100%" mask="url(#mask-2)" fill="#7F8FA4">
+        <g id="👷‍♂️Atoms/Colour/Dark-Grey/100%" mask="url(#mask-2)" fill="#249AF3">
             <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
         </g>
     </g>

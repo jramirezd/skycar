@@ -1,0 +1,39 @@
+.hero{
+    background-color: $dark;
+    padding: $s-48 $s-24;
+    background-image: url('/hero.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include media('tablet'){
+        position: relative;
+        min-height: 460px;
+    }
+    h1{
+        color: $white;
+        font-size: $f-32;
+        line-height: $f-42;
+        border-left: 2px solid $pc;
+        padding-left: $s-24;
+    }
+    p{
+        color: $text_1;
+        padding-left: $s-24;
+        margin-top: $s-16;
+        margin-bottom: $s-24;
+    }
+    .cta-box{
+        margin-left: $s-24;
+        .cta-white{
+            margin-left: $s-16;
+        }
+    }
+    .text-box{
+        @include media('tablet'){
+            position: absolute;
+            bottom: 48px;
+            right: 48px;
+            width: 480px;
+        }
+    }
+}

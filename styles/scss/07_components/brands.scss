@@ -1,0 +1,52 @@
+.brand-icons{
+    margin-top: $s-48;
+    div{
+        overflow: hidden;
+    }
+    .brands{
+        margin-top: $s-16;
+    }
+    ul{
+        display: flex;
+        align-content: space-between;
+        flex-wrap: wrap;
+        padding: $s-4;
+        li{
+            text-align: center;
+            background: $white;
+            box-shadow: 0 2px 2px 0 rgba(51,65,80,0.04);
+            border-radius: 6px;
+            padding: $s-16;
+            width: calc(25% - 8px);
+            margin: $s-4;
+            @include media('tablet'){
+                width: calc(13% - 12px);
+                margin: 0 $s-8 0 0;
+                &:last-child{
+                    margin-right: 0;
+                }
+                &:hover{
+                    box-shadow: 0 2px 2px 0 rgba(51,65,80,0.2);
+                 }
+            }
+            .image-brand{
+                height: 40px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: $s-8;
+                display: flex;
+            }
+            img{
+                margin: auto;
+                max-height: 30px;
+                max-width: 80%
+            }
+            span{
+                color: $text_1;
+                font-size: $f-12;
+                display: block;
+                margin-top: $s-8;
+            }
+        }
+    }
+}

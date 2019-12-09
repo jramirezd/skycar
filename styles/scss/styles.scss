@@ -24,7 +24,17 @@
 @import "04_layout/header";
 @import "04_layout/main";
 @import "04_layout/footer";
+@import "04_layout/titles";
 
 //ATOMS
 @import "05_atoms/buttons";
 @import "05_atoms/inputs";
+
+//COMPONENTS
+@import "06_molecules/card";
+
+//COMPONENTS
+@import "07_components/hero";
+@import "07_components/brands";
+@import "07_components/category";
+@import "07_components/card-home";

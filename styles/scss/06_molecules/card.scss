@@ -1,0 +1,21 @@
+.card-box{
+    margin: $s-16;
+    article{
+        background-color: $white;
+        display: flex;
+    }
+    &.lite{
+        article{
+            box-shadow: 0 2px 2px 0 rgba(51,65,80,0.04);
+            border-radius: 4px;
+            .image{
+                position: relative;
+            }
+        }
+    }
+    &.full{
+        article{
+            border-top: 1px solid $lines;
+        }
+    }
+}

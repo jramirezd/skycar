@@ -1,50 +1,85 @@
 import React, { useState, useEffect } from 'react';
-import MovieApi from '../services/MovieApi';
 import Layout from '../components/layout';
-import Head from 'next/head'
+import Head from 'next/head';
+import Hero from '../components/Hero';
+import Brands from '../components/Brands'
+import TypeSearch from '../components/TypeSearch'
+import CardItemHome from '../components/Cards/CardItemHome'
+import Card from '../components/Cards/Card'
 
 export default function Index() {
-  const [movies, setMovies] = useState([]);
-
-  const parseMovies = (array) => {
-      const movies = array.results.map( (movie)=>{
-          return {
-              path: movie.poster_path,
-              title: movie.title,
-              id: movie.id                
-          }
-      })
-      return movies;
-  }
-
-  //get movies function in case no search string was provided... 
-  const getMovies = async (category, page_number=1) => {
-      const data = await MovieApi.getMovies(category,page_number);
-      const movies = parseMovies(data);
-      console.log(movies);
-      setMovies(movies);
-  }
-
-  const onSearch = () => {
-        getMovies('top_rated'); 
-}
-
-  useEffect(()=>{onSearch()}, []);
+  const [cars] = useState([
+    {
+        brand: "Audi", 
+        model: "A3", 
+        id: 1, 
+        kms: 2333000, 
+        location: "Barcelona", 
+        year: 2016, 
+        category: "Sedan", 
+        tag: "Ocasión", 
+        photo: "/photos/car.png"
+    }, 
+    {
+        brand: "BMW", 
+        model: "X3", 
+        id: 2, 
+        kms: 2333000, 
+        location: "Barcelona", 
+        year: 2018, 
+        category: "Sedan", 
+        tag: "Ocasión", 
+        photo: "/photos/car.png"
+    }, 
+    {
+        brand: "Honda", 
+        model: "Accord", 
+        id: 3, 
+        kms: 2333000, 
+        location: "Barcelona", 
+        year: 2016, 
+        category: "Sedan", 
+        tag: "Ocasión", 
+        photo: "/photos/car.png"
+    }, 
+    {
+        brand: "Toyota", 
+        model: "Auris", 
+        id: 4, 
+        kms: 2333000, 
+        location: "Barcelona", 
+        year: 2016, 
+        category: "Sedan", 
+        tag: "Ocasión", 
+        photo: "/photos/car.png"
+    }
+    ]);
   return (
     <>
      <Head>
     <title>SkyCars - La plataforma de carcharing de los Skylabers</title>
     </Head>
     <Layout>
-      <h1>Pelis Pelis</h1>
-      <p>
-      Lorem fistrum sexuarl se calle ustée elit condemor officia. Diodenoo diodeno mamaar incididunt de la pradera te voy a borrar el cerito officia ut ut apetecan por la gloria de mi madre. Jarl ex pecador aute aute laboris ullamco officia.
-      </p>
-      <ul className="movieList">
-        {movies.map(function(movie) {
-        return <li key={movie.id}>{movie.title}</li>;
-        })}
-       </ul>
+      <Hero />
+      <main>
+        <Brands/>
+        <TypeSearch/>
+        <CardItemHome Title="Los más nuevos" SubTitle="Adelántate a los otros usuarios, estos los acaban de poner!" TypeCard="lite">
+        {cars.map(item => (
+           <Card 
+              brand={item.brand} 
+              model={item.model} 
+              id={item.id} 
+              kms={item.kms} 
+              location={item.location} 
+              year={item.year} 
+              category={item.category} 
+              tag={item.tag} 
+              photo={item.photo} 
+           />
+          ))}
+        </CardItemHome>
+      </main>
     </Layout>
     </>
   );
