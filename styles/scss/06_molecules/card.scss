@@ -1,15 +1,47 @@
 .card-box{
-    margin: $s-16;
+    margin: $s-16 0;
     article{
         background-color: $white;
         display: flex;
+        margin-bottom: $s-24;
+        .tags{
+            margin:$s-4 0;
+            span{
+                display: inline-block;
+                background-color: $lines;
+                padding: $s-4 $s-8;
+                margin-right: $s-4;
+                border-radius: 6px;
+            }
+        }
     }
     &.lite{
         article{
             box-shadow: 0 2px 2px 0 rgba(51,65,80,0.04);
             border-radius: 4px;
+            flex-direction: column;
             .image{
                 position: relative;
+                width: 100%;
+                overflow: hidden;
+                border-radius: 4px 4px 0 0;
+                img{
+                    margin: 0;
+                    width: 100%;
+                }
+                .price{
+                    position: absolute;
+                    bottom: 16px;
+                    left: 16px;
+                    color: $white;
+                    font-size:$f-32;
+                }
+            }
+            .content-box{
+                padding: $s-16;
+            }
+            .property{
+                margin: $s-4 0;
             }
         }
     }

@@ -13,6 +13,7 @@ export default function Index() {
         brand: "Audi", 
         model: "A3", 
         id: 1, 
+        price: 16000,
         kms: 2333000, 
         location: "Barcelona", 
         year: 2016, 
@@ -71,6 +72,7 @@ export default function Index() {
               model={item.model} 
               id={item.id} 
               kms={item.kms} 
+              price={item.price}
               location={item.location} 
               year={item.year} 
               category={item.category} 

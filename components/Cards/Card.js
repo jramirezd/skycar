@@ -6,22 +6,24 @@ const CardLiteHome = ({brand, model, id, kms, price, location, year, category, t
       <article className="card" key={id}>
         <div className="image">
             <img src={photo} />
-            <div>
+            <div className="price">
                 {price}
             </div>
         </div>
-        <h3>{brand} {model} {year}</h3>
-        <div>
-            <span>{category}</span>
-            <span>{tag}</span>
-        </div>
-        <div>
-            <span>Km:</span>
-            <p>{kms}</p>
-        </div>
-        <div>
-            <span>Ubicación:</span>
-            <p>{location}</p>
+        <div className="content-box">
+            <h3>{brand} {model} {year}</h3>
+            <div className="tags">
+                <span>{category}</span>
+                <span>{tag}</span>
+            </div>
+            <div className="property">
+                <span>Km:</span>
+                <p>{kms}</p>
+            </div>
+            <div className="property">
+                <span>Ubicación:</span>
+                <p>{location}</p>
+            </div>
         </div>
       </article>
     );
