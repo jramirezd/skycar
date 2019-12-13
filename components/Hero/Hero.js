@@ -11,7 +11,9 @@ const Hero = () => {
              Deja de dar la vara a tus colegas y encuentra entre más de 10000 anuncios el vehículo que se adapta a tus necesidades.
         </p>
         <div className="cta-box">
-            <Button>Buscar</Button>
+          <Link href="/list">
+            <a className="cta">Buscar</a>
+          </Link>
             <Button classItem={'cta-white'}>Vender</Button>
         </div>
     </div>

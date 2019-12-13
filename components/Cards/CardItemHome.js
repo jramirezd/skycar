@@ -5,8 +5,8 @@ const CardLiteHome = ({ children, Title, SubTitle, TypeCard }) => {
     return (
       <aside className="cards-home">
       <div className="title-box">
-        <h2>{Title}</h2>
-        <p>{SubTitle}</p>
+        {Title ? <h2>{Title}</h2>: ''}
+        {SubTitle ? <p>{SubTitle}</p>: ''}
       </div>
       <div className={`card-box ${TypeCard}`}>
          {children}

@@ -1,5 +1,7 @@
 .brand-icons{
-    margin-top: $s-48;
+    @include media('tablet'){
+        margin-top: $s-48;
+    }
     div{
         overflow: hidden;
     }
@@ -10,7 +12,9 @@
         display: flex;
         align-content: space-between;
         flex-wrap: wrap;
-        padding: $s-4;
+        @include media('tablet'){
+            padding: $s-4;
+        }
         li{
             text-align: center;
             background: $white;

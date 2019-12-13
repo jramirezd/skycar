@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Layout from '../components/layout';
 import Head from 'next/head';
 import Hero from '../components/Hero';
@@ -6,55 +6,12 @@ import Brands from '../components/Brands'
 import TypeSearch from '../components/TypeSearch'
 import CardItemHome from '../components/Cards/CardItemHome'
 import Card from '../components/Cards/Card'
+import UserContext from '../components/UserContext'
 
 export default function Index() {
-  const [cars] = useState([
-    {
-        brand: "Audi", 
-        model: "A3", 
-        id: 1, 
-        price: 16000,
-        kms: 2333000, 
-        location: "Barcelona", 
-        year: 2016, 
-        category: "Sedan", 
-        tag: "Ocasión", 
-        photo: "/photos/car.png"
-    }, 
-    {
-        brand: "BMW", 
-        model: "X3", 
-        id: 2, 
-        kms: 2333000, 
-        location: "Barcelona", 
-        year: 2018, 
-        category: "Sedan", 
-        tag: "Ocasión", 
-        photo: "/photos/car.png"
-    }, 
-    {
-        brand: "Honda", 
-        model: "Accord", 
-        id: 3, 
-        kms: 2333000, 
-        location: "Barcelona", 
-        year: 2016, 
-        category: "Sedan", 
-        tag: "Ocasión", 
-        photo: "/photos/car.png"
-    }, 
-    {
-        brand: "Toyota", 
-        model: "Auris", 
-        id: 4, 
-        kms: 2333000, 
-        location: "Barcelona", 
-        year: 2016, 
-        category: "Sedan", 
-        tag: "Ocasión", 
-        photo: "/photos/car.png"
-    }
-    ]);
+  const [cars, setCars] = useState([]);
+  const user  = useContext(UserContext);
+  console.log(user);
   return (
     <>
      <Head>

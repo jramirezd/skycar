@@ -1,10 +1,13 @@
-button{
+button, .cta, input[type="submit"]{
     padding: $s-16 $s-24;
     color: #fff;
     background-color: $pc;
     font-size: 16px;
     border-radius: 4px;
     border: none;
+    &.alternative{
+      background-color: $tc;
+    }
     @include media('tablet'){
       cursor: pointer;
       &:hover{

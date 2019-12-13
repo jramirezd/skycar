@@ -1,0 +1,62 @@
+.filter-box{
+    background-color: $white;
+    @include media('tablet'){
+        margin-right: $s-24;
+        width: 200px;
+    }
+    h4{
+        padding: $s-16;
+        border-bottom: 1px solid $lines;
+    }
+    .title{
+        color: $text_1;
+        display: block;
+        margin-left: $s-16;
+        font-size: $f-14;
+        line-height: $f-12;
+        margin-top: $s-24;
+    }
+    .category{
+        ul{
+            display: flex;
+            align-content: space-between;
+            flex-wrap: wrap;
+            padding: $s-8;
+            li{
+                width: 50%;
+                a{
+                    display: block;
+                }
+                .type-box{
+                    background: rgba(191,199,209,0.20);
+                    border-radius: 6px;
+                    margin: $s-4;
+                    text-align: center;
+                    font-size:$f-12;
+                    color: $text_1;
+                    padding:$s-16 0 $s-8 0; 
+                    img{
+                        margin: auto;
+                    }
+                }
+                .brand-box{
+                    border: 1px solid $lines;
+                    padding:$s-8;
+                    margin: $s-4;
+                    border-radius: 6px;
+                    height: 56px;
+                    position: relative;
+                    img{
+                        margin: auto;
+                        max-height: 30px;
+                        max-width: 80%;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+        }
+    }
+}

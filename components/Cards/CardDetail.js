@@ -2,25 +2,28 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Button from '../Button'
 
-const CardLiteHome = ({brand, model, id, kms, price, location, year, category, tag, photo}) => {
+const CardDetail = ({brand, model, id, kms, price, location, year, category, tag, photo}) => {
     return (
-      <article className="card" key={id}>
+      <article className="card">
         <div className="image">
             <Link href="/detail">
                 <a>
                    <img src={photo} />
-                <div className="price">
-                    {price}
-                </div> 
                 </a>
             </Link>
+            <div className="images">
+                <img src={photo} /> 
+                <img src={photo} />
+                <img src={photo} />
+                <img src={photo} />
+                <img src={photo} /> 
+            </div>
         </div>
         <div className="content-box">
-           <Link href="/detail">
-                <a>
-                    <h3>{brand} {model} {year}</h3>
-                </a>
-            </Link>
+              <h3>{brand} {model} {year}</h3>
+              <div className="price">
+                    {price}
+                </div> 
             <div className="tags">
                 <span>{category}</span>
                 <span>{tag}</span>
@@ -34,10 +37,8 @@ const CardLiteHome = ({brand, model, id, kms, price, location, year, category, t
                 <p>{location}</p>
             </div>
         </div>
-        <div className="contact-box">
-        <Button classItem={'alternative'}>Contactar</Button>
-        </div>
       </article>
+
     );
   }
-  export default CardLiteHome;
+  export default CardDetail;

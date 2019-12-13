@@ -1,7 +1,13 @@
+import { useState, useContext } from 'react';
+import UserContext from '../components/UserContext';
 import Layout from '../components/layout';
 import useForm from 'react-hook-form';
 
 export default function logIn() {
+  const { signIn } = useContext(UserContext);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
   const { register, handleSubmit, watch, errors } = useForm()
   const onSubmit = data => { console.log(data) }
 

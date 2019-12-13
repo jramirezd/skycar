@@ -6,7 +6,6 @@ import NavLogIn from './NavLogIn'
 
 const Header = () => {
   const [logIn, setlogIn] = useState(false);
-  console.log('Logeado:', logIn);
   return (
     <header>
     <div className="logo">
