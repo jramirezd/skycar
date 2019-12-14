@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Link from 'next/link';
 import logo from '../../img/logo.svg';
-import NavLogOut from './NavLogOut'
-import NavLogIn from './NavLogIn'
+import NavLogOut from './NavLogOut';
+import NavLogIn from './NavLogIn';
+import UserContext from '../UserContext';
 
 const Header = () => {
-  const [logIn, setlogIn] = useState(false);
+  const [logIn, setlogIn] = useContext(UserContext);
+  console.log(logIn);
   return (
     <header>
     <div className="logo">

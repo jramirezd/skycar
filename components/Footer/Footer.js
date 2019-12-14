@@ -4,7 +4,6 @@ import logo from '../../img/logo-white.svg';
 
 const Footer = () => {
   const [logIn, setlogIn] = useState(false);
-  console.log('Logeado:', logIn);
   return (
     <footer>
       <div className="center-box">

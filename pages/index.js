@@ -11,7 +11,6 @@ import UserContext from '../components/UserContext'
 export default function Index() {
   const [cars, setCars] = useState([]);
   const user  = useContext(UserContext);
-  console.log(user);
   return (
     <>
      <Head>
