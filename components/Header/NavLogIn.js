@@ -1,7 +1,13 @@
 import Link from 'next/link';
-import { auth } from '../../services';
+import { Router } from 'next/router'
+import { logout } from '../../services/auth';
 
 const NavLogiIn = () => {
+    const handleLogout = () => {
+        logout();
+        Router.push('/');
+      }
+    
     return(
   <nav>
       <div className="menu-box">
@@ -31,7 +37,7 @@ const NavLogiIn = () => {
                 </Link>
             </li>
             <li>
-                <a onClick={auth.doSignOut}>Cerrar sesión</a>
+                <a onClick={handleLogout}>Cerrar sesión</a>
             </li>
         </ul>
       </div>

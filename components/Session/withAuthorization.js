@@ -1,12 +1,12 @@
 import React from 'react';
 import Router from 'next/router';
 
-import { firebase } from '../../services';
+import { registerAuthObserver } from '../../services/auth';
 
 const withAuthorization = (needsAuthorization) => (Component) => {
   class WithAuthorization extends React.Component {
     componentDidMount() {
-      firebase.auth.onAuthStateChanged(authUser => {
+      registerAuthObserver(authUser => {
         if (!authUser && needsAuthorization) {
           Router.push('/signin')
         }

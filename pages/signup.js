@@ -1,12 +1,54 @@
-import React, { Component, useEffect } from "react";
-import Link from "next/link";
-import Router from "next/router";
+import React, { useState, useEffect, setState } from "react";
 import Head from 'next/head';
-
-import { auth, db } from "../services";
+import { Router } from 'next/router'
+import { signup, registerAuthObserver } from '../services/auth';
+import { addItemWithId, getItem } from '../services/database';
 import LayoutAdmin from "../components/layout";
 
-const SignUpPage = () => (
+let cancelObserver;
+
+export default function SignUpPage() {
+  const [formData, setFormData] = useState({name: '', email: '', password: '', passwordTwo: '', error: null});
+  const [error, setError] = useState('');
+
+
+  useEffect(() => {
+    if (cancelObserver) cancelObserver();
+
+    cancelObserver = registerAuthObserver(async (user) => {
+      if (user) {
+        const profile = await getItem('profiles', user.uid);
+        if (!profile) {
+          const result = await addItemWithId(
+            'profiles', 
+            { name: formData.name, email: formData.email },
+            user.uid
+          );   
+          if (result) {
+            Router.push('/');
+          }     
+        }        
+      }
+    })
+
+    return () => {
+      cancelObserver();
+    }
+  }, [formData.name, formData.email])
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+    setError('');
+
+    const { name, email, password } = formData;
+
+    if (!name || !email || !password) {
+      setError('Todos los campos son obligatorios');
+    } else {
+      signup(email, password);
+    }
+  }
+  return (
   <>
   <Head>
   <title>SkyCars - Crear cuenta</title>
@@ -14,112 +56,39 @@ const SignUpPage = () => (
   <LayoutAdmin>
     <main>
       <h1>Crear cuenta</h1>
-      <SignUpForm />
-    </main>
-  </LayoutAdmin>
-  </>
-);
-
-const updateByPropertyName = (propertyName, value) => () => ({
-  [propertyName]: value
-});
-
-const INITIAL_STATE = {
-  username: "",
-  email: "",
-  passwordOne: "",
-  passwordTwo: "",
-  error: null
-};
-
-class SignUpForm extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = { ...INITIAL_STATE };
-  }
-  
-  onSubmit = event => {
-    const { username, email, passwordOne } = this.state;
-    auth
-      .doCreateUserWithEmailAndPassword(email, passwordOne)
-      .then(authUser => {
-        db.writeUserData(authUser.user.uid, username, email)
-          .then(() => {
-            this.setState(() => ({ ...INITIAL_STATE }));
-            Router.push('/');
-          })
-          .catch(error => {
-            this.setState(updateByPropertyName("error", error));
-          });
-      })
-      .catch(error => {
-        this.setState(updateByPropertyName("error", error));
-      });
-    event.preventDefault();
-  };
-
-  render() {
-    const { username, email, passwordOne, passwordTwo, error } = this.state;
-
-    const isInvalid =
-      passwordOne !== passwordTwo || passwordOne === "" || username === "";
-
-    return (
-      <form onSubmit={this.onSubmit}>
+      <form onSubmit={onSubmit}>
         <input
-          value={username}
-          onChange={event =>
-            this.setState(updateByPropertyName("username", event.target.value))
-          }
+          value={formData.name} 
+          onChange={value => setFormData({ ...formData, name: value })} 
           type="text"
           placeholder="Full Name"
         />
         <input
-          value={email}
-          onChange={event =>
-            this.setState(updateByPropertyName("email", event.target.value))
-          }
+          value={formData.email} 
+          onChange={value => setFormData({ ...formData, email: value })} 
           type="text"
           placeholder="Email Address"
         />
         <input
-          value={passwordOne}
-          onChange={event =>
-            this.setState(
-              updateByPropertyName("passwordOne", event.target.value)
-            )
-          }
+          value={formData.password} 
+          onChange={value => setFormData({ ...formData, password: value })} 
           type="password"
           placeholder="Password"
         />
         <input
-          value={passwordTwo}
-          onChange={event =>
-            this.setState(
-              updateByPropertyName("passwordTwo", event.target.value)
-            )
-          }
+          value={formData.passwordTwo} 
+          onChange={value => setFormData({ ...formData, passwordTwo: value })} 
           type="password"
           placeholder="Confirm Password"
         />
-        <button disabled={isInvalid} type="submit">
+        <button type="submit">
           Sign Up
         </button>
 
         {error && <p>{error.message}</p>}
       </form>
-    );
-  }
+    </main>
+  </LayoutAdmin>
+  </>
+ );
 }
-
-const SignUpLink = () => (
-  <p>
-    No tienes cuenta? {" "}
-    <Link href="/signup">
-      <a>Crear cuenta</a>
-    </Link>
-  </p>
-);
-export default SignUpPage;
-export { SignUpForm, SignUpLink };

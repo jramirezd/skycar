@@ -1,21 +1,28 @@
-import { auth } from './firebase';
+import firebase from 'firebase';
 
-// Sign Up
-export const doCreateUserWithEmailAndPassword = (email, password) =>
-  auth.createUserWithEmailAndPassword(email, password);
+function signup(email, password) {
+  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+    console.log("TCL: signup -> error", error)
+  });
+}
 
-// Sign In
-export const doSignInWithEmailAndPassword = (email, password) =>
-  auth.signInWithEmailAndPassword(email, password);
+async function login(email, password) {
+  const result = await firebase.auth().signInWithEmailAndPassword(email, password);
+  return !!result;
+}
 
-// Sign out
-export const doSignOut = () =>
-  auth.signOut();
+function logout() {
+  firebase.auth().signOut();
+}
 
-// Password Reset
-export const doPasswordReset = (email) =>
-  auth.sendPasswordResetEmail(email);
+function registerAuthObserver(callback) {
+  return firebase.auth().onAuthStateChanged(callback);
+}
 
-// Password Change
-export const doPasswordUpdate = (password) =>
-  auth.currentUser.updatePassword(password);
+
+export {
+  signup,
+  logout,
+  login,
+  registerAuthObserver
+}

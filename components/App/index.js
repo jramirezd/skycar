@@ -9,6 +9,7 @@ const App = ({ children }) => (
     {children}
   </div>
 );
+
 const AppWithAuthentication = compose(
   withAuthentication,
   withAuthorization(false)

@@ -3,6 +3,12 @@ import App, { Container } from "next/app";
 import Router from 'next/router';
 import { Provider } from "react-redux";
 import withRedux from "next-redux-wrapper";
+import firebase from 'firebase';
+import config from '../config';
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(config.firebase);
+}
 
 import initStore from "../store";
 

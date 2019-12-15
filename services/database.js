@@ -1,25 +1,5 @@
-import { db } from './firebase';
+import firebase from 'firebase';
 import "firebase/firestore";
-
-// User API
-
-export const doCreateUser = (id, username, email) =>
-  db.ref(`users/${id}`).set({
-    username,
-    email,
-  });
-
-function writeUserData(userId, name, email) {
-    db.ref('users/' + userId).set({
-      username: name,
-      email: email
-  });
-}
-
-export const onceGetUsers = () =>
-  db.ref('users').once('value');
-
-// Other db APIs ...
 
 function parseDoc(doc) {
   return {
@@ -28,6 +8,7 @@ function parseDoc(doc) {
   }
 }
 
+let db;
 function getDbInstance() {
   if (!db || db._isTerminated) {
     db = firebase.firestore();
@@ -90,6 +71,5 @@ export {
   getItem,
   getAllRealTime,
   deleteItem,
-  writeUserData,
   addItemWithId
 }

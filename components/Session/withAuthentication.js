@@ -1,32 +1,47 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { connect, useSelector } from 'react-redux';
 
-import { firebase } from '../../services';
+import { registerAuthObserver } from '../../services/auth';
 
-const withAuthentication = (Component) => {
-  class WithAuthentication extends React.Component {
-    componentDidMount() {
-      const { onSetAuthUser } = this.props;
 
-      firebase.auth.onAuthStateChanged(authUser => {
-        authUser
-          ? onSetAuthUser(authUser)
-          : onSetAuthUser(null);
-      });
-    }
+const WithAuthentication = ( Component ) => {
+      const { onSetAuthUser } = authUser;
+      const [isLoading, setIsLoading] = useState(true);
+      const user = useSelector(state => state.authUser);
 
-    render() {
+      useEffect(() => {
+        const cancelObserver = registerAuthObserver(async (user) => {
+          console.log("TCL: cancelObserver -> user", user)
+          if (user) {
+            const profile = await getItem('profiles', user.uid);
+            console.log("TCL: cancelObserver -> profile", profile)
+            if (profile) {
+              onSetAuthUser(profile);
+            } else {
+              console.log("todavía se está registrando");
+            }
+          } else {
+            onSetAuthUser(null);
+          }
+          setIsLoading(false);
+        });
+    
+        return () => {
+          cancelObserver();
+        };
+      }, []);
+    
       return (
         <Component { ...this.props } />
       );
-    }
-  }
-
-  const mapDispatchToProps = (dispatch) => ({
-    onSetAuthUser: (authUser) => dispatch({ type: 'AUTH_USER_SET', authUser }),
-  });
-
-  return connect(null, mapDispatchToProps)(WithAuthentication);
+ 
 }
 
-export default withAuthentication;
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onSetAuthUser: (authUser) => dispatch({ type: 'AUTH_USER_SET', authUser })
+  }
+}
+
+export default connect(null, mapDispatchToProps)(WithAuthentication);
