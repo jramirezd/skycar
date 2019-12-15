@@ -1,10 +1,7 @@
 import Link from 'next/link';
+import { auth } from '../../services';
 
-
-const NavLogiIn = ({ setlogIn }) => {
-    const handleLogoutClick = () => {
-        setlogIn(false);
-    }
+const NavLogiIn = () => {
     return(
   <nav>
       <div className="menu-box">
@@ -14,7 +11,7 @@ const NavLogiIn = ({ setlogIn }) => {
         <span></span>
         <ul className="menu">
             <li>
-                <Link href="/">
+                <Link href="/account">
                     <a>Mi cuenta</a>
                 </Link>
             </li>
@@ -34,7 +31,7 @@ const NavLogiIn = ({ setlogIn }) => {
                 </Link>
             </li>
             <li>
-                <a onClick={handleLogoutClick}>Cerrar sesión</a>
+                <a onClick={auth.doSignOut}>Cerrar sesión</a>
             </li>
         </ul>
       </div>

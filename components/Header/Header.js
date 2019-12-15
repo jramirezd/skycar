@@ -3,11 +3,9 @@ import Link from 'next/link';
 import logo from '../../img/logo.svg';
 import NavLogOut from './NavLogOut';
 import NavLogIn from './NavLogIn';
-import UserContext from '../UserContext';
+import { connect } from 'react-redux';
 
-const Header = () => {
-  const [logIn, setlogIn] = useContext(UserContext);
-  console.log(logIn);
+const Header = ({ authUser }) => {
   return (
     <header>
     <div className="logo">
@@ -15,8 +13,12 @@ const Header = () => {
       <a><img src={logo}/></a>
     </Link>
     </div>
-    {logIn ? <NavLogIn setlogIn={setlogIn} /> : <NavLogOut setlogIn={setlogIn} />}
+    {authUser ? <NavLogIn /> : <NavLogOut />}
     </header>
   );
 }
-export default Header;
+const mapStateToProps = (state) => ({
+  authUser: state.sessionState.authUser,
+});
+
+export default connect(mapStateToProps)(Header);

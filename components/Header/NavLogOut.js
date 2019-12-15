@@ -1,9 +1,10 @@
 import Link from 'next/link';
 
+
 const NavLogOut = () => {
     return(
   <nav>
-    <Link href="/login">
+    <Link href="/signin">
       <a className="btn-transparent">Iniciar sesión</a>
     </Link>
     <Link  href="/login">
