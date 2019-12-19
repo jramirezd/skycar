@@ -1,7 +1,15 @@
 import Link from 'next/link';
 import { auth } from '../../services';
 
-const NavLogiIn = () => {
+import Router from "next/router";
+
+const handleLogout = () => {
+  auth.doSignOut();
+  Router.push('/');
+}
+
+const NavLogiIn = (user) => {
+    const id = user.user;
     return(
   <nav>
       <div className="menu-box">
@@ -11,28 +19,33 @@ const NavLogiIn = () => {
         <span></span>
         <ul className="menu">
             <li>
-                <Link href="/account">
+                <Link href={`/account?id=${id}`}>
                     <a>Mi cuenta</a>
                 </Link>
             </li>
             <li>
-                <Link href="/">
+                <Link href={`/newadd?id=${id}`}>
                     <a>Mi anuncio</a>
                 </Link>
             </li>
             <li>
-                <Link href="/">
+                <Link href={`/favorites?id=${id}`}>
                     <a>Favoritos</a>
                 </Link>
             </li>
             <li>
-                <Link href="/">
+                <Link href={`/request?id=${id}`}>
                     <a>Request</a>
                 </Link>
             </li>
             <li>
-                <a onClick={auth.doSignOut}>Cerrar sesión</a>
+                <a onClick={handleLogout}>Cerrar sesión</a>
             </li>
+            <li className="log-cta">
+                <Link href={`/newadd?id=${id}`}>
+                    <a className="big-cta">Vende tu coche</a>
+                </Link>
+            </li>       
         </ul>
       </div>
   </nav>

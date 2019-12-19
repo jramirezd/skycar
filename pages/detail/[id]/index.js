@@ -1,23 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import Layout from '../components/layout';
+import { useRouter } from 'next/router'
+import Layout from '../../../components/layout';
 import Head from 'next/head';
-import CardDetail from '../components/Cards/CardDetail'
+import CardDetail from '../../../components/Cards/CardDetail';
+import useGetAdv from '../../../logic/useGetAdv';
+import RequestForm from '../../../components/Request/requestForm'
 
 export default function Detail() {
-  const [car] = useState(
-    {
-        brand: "Audi", 
-        model: "A3", 
-        id: 1, 
-        price: 16000,
-        kms: 2333000, 
-        location: "Barcelona", 
-        year: 2016, 
-        category: "Sedan", 
-        tag: "Ocasión", 
-        photo: "/photos/car.png"
-    }
-    );
+  const router = useRouter();
+  const { id } = router.query;
+  const [car] = useGetAdv('adv', id);  
   return (
     <>
      <Head>
@@ -39,6 +31,9 @@ export default function Detail() {
               photo={car.photo} 
            />
         </section>
+        <aside>
+          <RequestForm id={car.id} />
+        </aside>
         <aside>
           Contactar
 

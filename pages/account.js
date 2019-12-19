@@ -1,27 +1,51 @@
-import React from "react";
-import { connect } from "react-redux";
+import React, { useState, useEffect }  from "react";
+import { useRouter } from 'next/router'
 import Head from 'next/head';
 import { PasswordForgetForm } from "./pw-forget";
 import PasswordChangeForm from "../components/PasswordChange";
-import Layout from "../components/layout";
+import LayoutAdmin from "../components/layoutAdmin";
+import useGetAdv from '../logic/useGetAdv';
 
-const AccountPage = ({ authUser }) => (
+const AccountPage = () => {
+  const router = useRouter();
+  const { id } = router.query;
+  const user = useGetAdv('users', id);  
+  const data = user[0];
+  const ubicacion = data.provincia;
+  return (
   <>
   <Head>
     <title>SkyCars - mi cuenta</title>
   </Head>
-  <Layout>
+  <LayoutAdmin>
     <main>
-      <div>Mi email: {authUser.email}</div>
-      <PasswordForgetForm />
-      <PasswordChangeForm />
+      <h2>Hola {data.name} {data.surname}</h2>
+      <div>
+        <span>Nombre</span>
+        <span>{data.name} {data.surname}</span>
+      </div>
+      <div>
+        <span>Email</span>
+        <span>{data.email}</span>
+      </div>
+      <div>
+        <span>Teléfono</span>
+        <span>{data.phone}</span>
+      </div>
+      <div>
+        <span>Provincia</span>
+        <span>{data.provincia}</span>
+      </div>
+      <h3>Cambiar password</h3>
+      <div>
+        <PasswordForgetForm />
+        <PasswordChangeForm />
+      </div>
     </main>
-  </Layout>
+  </LayoutAdmin>
   </>
-);
+  );
+}
 
-const mapStateToProps = state => ({
-  authUser: state.sessionState.authUser
-});
 
-export default connect(mapStateToProps)(AccountPage);
+export default AccountPage;

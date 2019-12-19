@@ -1,32 +1,38 @@
-import React, { Component, useEffect } from "react";
+import React, { Component, useEffect, useContext } from "react";
 import Link from "next/link";
 import Router from "next/router";
-import Head from 'next/head';
+import Head from "next/head";
 
 import { auth, db } from "../services";
-import LayoutAdmin from "../components/layout";
+import Layout from "../components/layout";
+import Select from "react-select";
 
 const SignUpPage = () => (
   <>
   <Head>
   <title>SkyCars - Crear cuenta</title>
   </Head>
-  <LayoutAdmin>
+  <Layout>
     <main>
       <h1>Crear cuenta</h1>
       <SignUpForm />
     </main>
-  </LayoutAdmin>
+  </Layout>
   </>
 );
+
 
 const updateByPropertyName = (propertyName, value) => () => ({
   [propertyName]: value
 });
 
 const INITIAL_STATE = {
+  id: "",
   username: "",
+  surname: "",
   email: "",
+  phone: "",
+  selectedOption: null,
   passwordOne: "",
   passwordTwo: "",
   error: null
@@ -40,11 +46,11 @@ class SignUpForm extends Component {
   }
   
   onSubmit = event => {
-    const { username, email, passwordOne } = this.state;
+    const { username, surname, email, phone, selectedOption, passwordOne } = this.state;
     auth
       .doCreateUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
-        db.writeUserData(authUser.user.uid, username, email)
+        db.doCreateUser(authUser.user.uid, username, surname, email, phone, selectedOption)
           .then(() => {
             this.setState(() => ({ ...INITIAL_STATE }));
             Router.push('/');
@@ -58,10 +64,19 @@ class SignUpForm extends Component {
       });
     event.preventDefault();
   };
-
+  handleChange = selectedOption => {
+    this.setState(
+      { selectedOption },
+      () => console.log(`Option selected:`, this.state.selectedOption)
+    );
+  };
   render() {
-    const { username, email, passwordOne, passwordTwo, error } = this.state;
-
+    const { username, surname, email, phone, selectedOption, passwordOne, passwordTwo, error } = this.state;
+    const options = [
+      { value: 'barcelona', label: 'Barcelona' },
+      { value: 'madrid', label: 'Madrid' },
+      { value: 'valencia', label: 'Valencia' },
+    ];
     const isInvalid =
       passwordOne !== passwordTwo || passwordOne === "" || username === "";
 
@@ -73,7 +88,23 @@ class SignUpForm extends Component {
             this.setState(updateByPropertyName("username", event.target.value))
           }
           type="text"
-          placeholder="Full Name"
+          placeholder="Nombre"
+        />
+         <input
+          value={surname}
+          onChange={event =>
+            this.setState(updateByPropertyName("surname", event.target.value))
+          }
+          type="text"
+          placeholder="Apellido"
+        />
+         <input
+          value={phone}
+          onChange={event =>
+            this.setState(updateByPropertyName("phone", event.target.value))
+          }
+          type="text"
+          placeholder="Teléfono"
         />
         <input
           value={email}
@@ -81,8 +112,13 @@ class SignUpForm extends Component {
             this.setState(updateByPropertyName("email", event.target.value))
           }
           type="text"
-          placeholder="Email Address"
+          placeholder="Email"
         />
+        <Select
+        value={selectedOption}
+        onChange={this.handleChange}
+        options={options}
+      />
         <input
           value={passwordOne}
           onChange={event =>

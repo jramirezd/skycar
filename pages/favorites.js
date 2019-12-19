@@ -1,21 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import Layout from '../components/layout';
+import LayoutAdmin from "../components/layoutAdmin";
+import { useRouter } from 'next/router'
 import Head from 'next/head';
 import CardItemHome from '../components/Cards/CardItemHome'
 import Card from '../components/Cards/Card'
-import Filter from '../components/Filter'
-import useGetAll from '../logic/useGetAll';
+import useGetAdv from '../logic/useGetAdv';
+import useGetFavs from '../logic/useGetFavs';
 
-export default function List() {
-  const [cars] = useGetAll('adv');
+export default function Favorites() {
+  const router = useRouter();
+  const { id } = router.query;
+  const user = useGetAdv('users', id); 
+  const favItems = user[0].favorites;
+  const cars = useGetFavs('adv', favItems); 
+
   return (
     <>
      <Head>
         <title>SkyCars - Todos los coches a tu alcance</title>
     </Head>
-    <Layout>
+    <LayoutAdmin>
       <main className="adv-lists">
-        <Filter />
          <section className="ads-items">
             <CardItemHome Title="Resultados" TypeCard="full">
             {cars.map(item => (
@@ -35,7 +40,7 @@ export default function List() {
             </CardItemHome>   
          </section>
       </main>
-    </Layout>
+    </LayoutAdmin>
     </>
   );
 }

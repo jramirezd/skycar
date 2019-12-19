@@ -1,34 +1,12 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Button from '../Button';
+import { addItem } from '../../services/db';
+import useGetAll from '../../logic/useGetAll';
 
 const BrandSearch = () => {
-  const [brands] = useState([
-    {
-        brand: "Audi", id: 1, ads: 2333
-    }, 
-    {
-        brand: "BMW", id: 2, ads: 4222
-    }, 
-    {
-        brand: "Hyndai", id: 3, ads: 2424
-    }, 
-    {
-        brand: "Jaguar", id: 4, ads: 5
-    }, 
-    {
-        brand: "Kia", id: 5, ads: 242
-    }, 
-    {
-        brand: "Mercedes", id: 6, ads: 242
-    }, 
-    {
-        brand: "Porsche", id: 7, ads: 4242
-    }, 
-    {
-        brand: "Volkswagen", id: 8, ads: 4242
-    }
-    ]);
+  const [brands, isLoading, fetchBrands] = useGetAll('cars');
+
   return (
     <aside className="brand-icons">
     <div>
@@ -39,12 +17,12 @@ const BrandSearch = () => {
     </div>
     <div className="brands">
       <ul>
-        {brands.map(item => (
+        {brands.slice(0,8).map(item => (
            <li key={item.id}>
            <Link href="/">
-             <a alt={item.brand} title={item.brand}>
+             <a alt={item.name} title={item.name}>
                 <div className="image-brand">
-                    <img src={`/logos/${item.brand}.png`} />
+                    <img src={`/logos/${item.name}.png`} />
                 </div> 
                <span>{item.ads}</span>
              </a>

@@ -13,12 +13,12 @@ const Header = ({ authUser }) => {
       <a><img src={logo}/></a>
     </Link>
     </div>
-    {authUser ? <NavLogIn /> : <NavLogOut />}
+    {authUser ? <NavLogIn user={authUser.uid} /> : <NavLogOut />}
     </header>
   );
 }
 const mapStateToProps = (state) => ({
-  authUser: state.sessionState.authUser,
+  authUser: state.sessionState.authUser
 });
 
 export default connect(mapStateToProps)(Header);

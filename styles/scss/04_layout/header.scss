@@ -110,6 +110,12 @@ header{
      padding: $s-16 $s-24;
      font-size: $s-16;
      border-bottom: 1px solid $text_1;
+     &.log-cta{
+      margin: 0;
+      padding: 0;
+      margin-bottom: none;
+     
+    }
      @include media('tablet'){
         padding:0;
         border-bottom: none;     
@@ -117,10 +123,12 @@ header{
      a{
         color: $lines;
         @include media('tablet'){
-            line-height: 20px;
+            line-height: 32px;
             padding: $s-16;
             color: $text_1;
-            
+        }
+        &.big-cta{
+          color: $lines;
         }
      }
    }

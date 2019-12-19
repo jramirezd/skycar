@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React from 'react';
 import Layout from '../components/layout';
 import Head from 'next/head';
 import Hero from '../components/Hero';
@@ -6,11 +6,10 @@ import Brands from '../components/Brands'
 import TypeSearch from '../components/TypeSearch'
 import CardItemHome from '../components/Cards/CardItemHome'
 import Card from '../components/Cards/Card'
-import UserContext from '../components/UserContext'
+import useGetAll from '../logic/useGetAll';
 
 export default function Index() {
-  const [cars, setCars] = useState([]);
-  const user  = useContext(UserContext);
+  const [cars] = useGetAll('adv');
   return (
     <>
      <Head>
@@ -23,6 +22,7 @@ export default function Index() {
         <TypeSearch/>
         <CardItemHome Title="Los más nuevos" SubTitle="Adelántate a los otros usuarios, estos los acaban de poner!" TypeCard="lite">
         {cars.map(item => (
+           <article className="card" key={item.id}>
            <Card 
               brand={item.brand} 
               model={item.model} 
@@ -34,7 +34,9 @@ export default function Index() {
               category={item.category} 
               tag={item.tag} 
               photo={item.photo} 
+              favorite={item.favorite} 
            />
+           </article>
           ))}
         </CardItemHome>
       </main>

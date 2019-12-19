@@ -19,6 +19,7 @@ const CardDetail = ({brand, model, id, kms, price, location, year, category, tag
                 <img src={photo} /> 
             </div>
         </div>
+        <button>Add fav</button>
         <div className="content-box">
               <h3>{brand} {model} {year}</h3>
               <div className="price">

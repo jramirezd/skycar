@@ -5,3 +5,7 @@ input{
     color: $text_1;
     width: 100%;
 }
+fieldset{
+    margin: $s-24;
+    border: none;
+}

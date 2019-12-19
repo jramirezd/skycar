@@ -1,27 +1,11 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { addItem } from '../../services/db';
+import useGetAll from '../../logic/useGetAll';
 
 const TypeSearch = () => {
-  const [types] = useState([
-    {
-      category: "Hatchback", id: 1
-    }, 
-    {
-      category: "Sedan", id: 2
-    }, 
-    {
-      category: "Coupe", id: 3
-    }, 
-    {
-      category: "Wagon", id: 4
-    }, 
-    {
-      category: "SUV", id: 5
-    }, 
-    {
-      category: "Van", id: 6
-    }
-    ]);
+  const [types, isLoading, fetchTypes] = useGetAll('categories');
+
   return (
     <aside className="category-icons">
     <div>
@@ -32,10 +16,10 @@ const TypeSearch = () => {
         {types.map(item => (
            <li key={item.id}>
            <Link href="/">
-             <a alt={item.category} title={item.category}>
+             <a alt={item.name} title={item.name}>
                 <div className="type-box">
-                    <img src={`/categories/${item.category}.png`} />
-                    <span>{item.category}</span>
+                    <img src={`/categories/${item.name}.png`} />
+                    <span>{item.name}</span>
                 </div> 
              </a>
            </Link>
