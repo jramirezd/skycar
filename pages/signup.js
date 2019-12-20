@@ -2,9 +2,10 @@ import React, { Component, useEffect, useContext } from "react";
 import Link from "next/link";
 import Router from "next/router";
 import Head from "next/head";
+import logo from '../public/img/logo-white.svg';
 
 import { auth, db } from "../services";
-import Layout from "../components/layout";
+import LayoutUser from "../components/layoutUser";
 import Select from "react-select";
 
 const SignUpPage = () => (
@@ -12,12 +13,31 @@ const SignUpPage = () => (
   <Head>
   <title>SkyCars - Crear cuenta</title>
   </Head>
-  <Layout>
-    <main>
-      <h1>Crear cuenta</h1>
+  <LayoutUser>
+  <main className="login">
+      <aside className="hero-image image">
+         <div className="logo">
+            <Link href="/">
+              <a><img src={logo}/></a>
+            </Link>
+         </div>
+         <div className="text-box">
+          <h1>Crea tu cuenta</h1>
+        </div>
+      </aside>
+  <aside className="form-box signup">
       <SignUpForm />
-    </main>
-  </Layout>
+    <div className="bottom-box">
+        <p>
+        ¿Ya tienes cuenta?  
+        <Link href="/signin">
+          <a> Iniciar sesión</a>
+        </Link>
+      </p>
+    </div>
+  </aside>
+  </main>
+  </LayoutUser>
   </>
 );
 
@@ -82,6 +102,8 @@ class SignUpForm extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
+      {error && <p>{error.message}</p>}
+      <fieldset>
         <input
           value={username}
           onChange={event =>
@@ -90,6 +112,8 @@ class SignUpForm extends Component {
           type="text"
           placeholder="Nombre"
         />
+        </fieldset>
+        <fieldset>
          <input
           value={surname}
           onChange={event =>
@@ -98,6 +122,8 @@ class SignUpForm extends Component {
           type="text"
           placeholder="Apellido"
         />
+        </fieldset>
+        <fieldset>
          <input
           value={phone}
           onChange={event =>
@@ -106,6 +132,8 @@ class SignUpForm extends Component {
           type="text"
           placeholder="Teléfono"
         />
+        </fieldset>
+        <fieldset>
         <input
           value={email}
           onChange={event =>
@@ -114,11 +142,15 @@ class SignUpForm extends Component {
           type="text"
           placeholder="Email"
         />
+        </fieldset>
+        <fieldset>
         <Select
         value={selectedOption}
         onChange={this.handleChange}
         options={options}
       />
+      </fieldset>
+      <fieldset>
         <input
           value={passwordOne}
           onChange={event =>
@@ -129,6 +161,8 @@ class SignUpForm extends Component {
           type="password"
           placeholder="Password"
         />
+        </fieldset>
+        <fieldset>
         <input
           value={passwordTwo}
           onChange={event =>
@@ -139,11 +173,13 @@ class SignUpForm extends Component {
           type="password"
           placeholder="Confirm Password"
         />
+        </fieldset>
+        <fieldset>
         <button disabled={isInvalid} type="submit">
-          Sign Up
+          Darse de alta
         </button>
-
-        {error && <p>{error.message}</p>}
+        </fieldset>
+        
       </form>
     );
   }
@@ -151,9 +187,9 @@ class SignUpForm extends Component {
 
 const SignUpLink = () => (
   <p>
-    No tienes cuenta? {" "}
+    ¿No tienes cuenta?  {" "}
     <Link href="/signup">
-      <a>Crear cuenta</a>
+      <a> Crear cuenta</a>
     </Link>
   </p>
 );

@@ -19,12 +19,12 @@ const BrandSearch = () => {
       <ul>
         {brands.slice(0,8).map(item => (
            <li key={item.id}>
-           <Link href="/">
+           <Link href={`/list?=${item.name}`}>
              <a alt={item.name} title={item.name}>
                 <div className="image-brand">
                     <img src={`/logos/${item.name}.png`} />
                 </div> 
-               <span>{item.ads}</span>
+               <span>{item.name}</span>
              </a>
            </Link>
          </li>

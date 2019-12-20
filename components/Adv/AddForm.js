@@ -48,28 +48,30 @@ const AddForm = () => {
     const downloadURL = await uploadFile(file, setFileUploadPercent);
     if (downloadURL){
       setFormData({...formData, photo: downloadURL});
+    } else {
+      setError('No se ha subido la imagen');
     }
   };
 
  
  const onSubmit = (event) => {
     event.preventDefault();
-    setError('');
-    const {id, setBrand, setModel, destacado, category, price, tags, kms, year, photo, longtext, provincia } = formData;
-    console.log("TCL: onSubmit -> formData", formData)
+    const {setBrand, setModel, destacado, category, price, tags, kms, year, photo, longtext } = formData;
+    if (!formData.price || !formData.kms || !formData.year) {
+      setError('Todos los campos son obligatorios');
+    } else{
+        addCar(id, setBrand, setModel, destacado, category, price, tags, kms, year, photo, longtext, provincia).then(() => {
+        Router.push('/carok');
+     })
+    }
     
-    // addCar(id, setBrand, setModel, destacado, category, price, tags, kms, year, photo, longtext, provincia).then(() => {
-    //    Router.push('/carok');
-    //  })
-    //  if (!setBrand || !destacado || !category) {
-    //    setError('Todos los campos son obligatorios');
-    // }
+  
   }
   
   return (
     <section className="add-car-form">
     <div className="brands">
-    {error && <p>{error.message}</p>}
+    {error && <p>{error}</p>}
     <form onSubmit={onSubmit}>
   
         <FormSelect 
@@ -125,10 +127,11 @@ const AddForm = () => {
           <label>Foto</label>
         <input type="file" onChange={handleUploadImage} />
         </fieldset>
-
+        <fieldset>
         <Button type="submit">
           Publicar
         </Button>
+        </fieldset>
 
         
       </form>

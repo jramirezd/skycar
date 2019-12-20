@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import logo from '../../img/logo-white.svg';
+import logo from '../../public/img/logo-white.svg';
 
 const Footer = () => {
   const [logIn, setlogIn] = useState(false);

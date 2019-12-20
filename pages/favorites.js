@@ -24,6 +24,7 @@ export default function Favorites() {
          <section className="ads-items">
             <CardItemHome Title="Resultados" TypeCard="full">
             {cars.map(item => (
+               <article className="card" key={item.id}>
             <Card 
                 brand={item.brand} 
                 model={item.model} 
@@ -36,6 +37,7 @@ export default function Favorites() {
                 tag={item.tag} 
                 photo={item.photo} 
             />
+            </article>
             ))}
             </CardItemHome>   
          </section>

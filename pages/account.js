@@ -18,26 +18,26 @@ const AccountPage = () => {
     <title>SkyCars - mi cuenta</title>
   </Head>
   <LayoutAdmin>
-    <main>
+    <main className="admin">
       <h2>Hola {data.name} {data.surname}</h2>
-      <div>
+      <div className="property">
         <span>Nombre</span>
-        <span>{data.name} {data.surname}</span>
+        <div>{data.name} {data.surname}</div>
       </div>
-      <div>
+      <div className="property">
         <span>Email</span>
-        <span>{data.email}</span>
+        <div>{data.email}</div>
       </div>
-      <div>
+      <div className="property">
         <span>Teléfono</span>
-        <span>{data.phone}</span>
+        <div>{data.phone}</div>
       </div>
-      <div>
+      <div className="property">
         <span>Provincia</span>
-        <span>{data.provincia}</span>
+        <div>{data.provincia}</div>
       </div>
       <h3>Cambiar password</h3>
-      <div>
+      <div className="bottom-box">
         <PasswordForgetForm />
         <PasswordChangeForm />
       </div>

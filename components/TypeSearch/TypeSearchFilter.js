@@ -27,7 +27,7 @@ const TypeSearchFilter = () => {
       <ul>
         {types.map(item => (
            <li key={item.id}>
-           <Link href="/">
+           <Link href={`/list?=${item.name}`}>
              <a alt={item.category} title={item.category}>
                 <div className="type-box">
                     <img src={`/icons/${item.category}.svg`} />

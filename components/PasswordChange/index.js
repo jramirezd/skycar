@@ -46,23 +46,29 @@ class PasswordChangeForm extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
+      { error && <p className="error">{error.message}</p> }
+      <fieldset>
         <input
           value={passwordOne}
           onChange={event => this.setState(updateByPropertyName('passwordOne', event.target.value))}
           type="password"
-          placeholder="New Password"
+          placeholder="Nuevo Password"
         />
+        </fieldset>
+        <fieldset>
         <input
           value={passwordTwo}
           onChange={event => this.setState(updateByPropertyName('passwordTwo', event.target.value))}
           type="password"
-          placeholder="Confirm New Password"
+          placeholder="Confirmar Password"
         />
+        </fieldset>
+        <fieldset>
         <button disabled={isInvalid} type="submit">
           Resetear password
         </button>
-
-        { error && <p>{error.message}</p> }
+        </fieldset>
+        
       </form>
     );
   }

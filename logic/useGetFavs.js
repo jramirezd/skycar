@@ -13,8 +13,8 @@ const useGetFavs = (collection = '', favs = []) => {
         const data = getItem(collection, id);
         return data
       });
-      const elems = await Promise.all(favsPromises)
-      setData(elems)
+      const elements = await Promise.all(favsPromises)
+      setData(elements)
  }
  return data
 }

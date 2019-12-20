@@ -21,7 +21,7 @@ export default function Index() {
         <Brands/>
         <TypeSearch/>
         <CardItemHome Title="Los más nuevos" SubTitle="Adelántate a los otros usuarios, estos los acaban de poner!" TypeCard="lite">
-        {cars.map(item => (
+        {cars.slice(0,4).map(item => (
            <article className="card" key={item.id}>
            <Card 
               brand={item.brand} 
@@ -34,7 +34,7 @@ export default function Index() {
               category={item.category} 
               tag={item.tag} 
               photo={item.photo} 
-              favorite={item.favorite} 
+              favorite="true" 
            />
            </article>
           ))}

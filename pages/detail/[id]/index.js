@@ -32,13 +32,17 @@ export default function Detail() {
            />
         </section>
         <aside>
-          <RequestForm id={car.id} />
-        </aside>
-        <aside>
-          Contactar
-
-          No logeado
-          SI logeado
+          <div className="more-info">
+            <h1>{car.brand} {car.model} {car.year}</h1>
+            <div className="tags">
+                <span>{car.category}</span>
+                <span>{car.tag}</span>
+                <span>{car.location}</span>
+            </div>
+            <h2>{car.destacado}</h2>
+            <p>{car.description}</p>
+          </div>
+          <RequestForm id={car.id} user="Nombre usuario" />
         </aside>
       </main>
     </Layout>

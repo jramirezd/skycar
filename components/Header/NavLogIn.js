@@ -24,7 +24,7 @@ const NavLogiIn = (user) => {
                 </Link>
             </li>
             <li>
-                <Link href={`/newadd?id=${id}`}>
+                <Link href={`/editadd?id=${id}`}>
                     <a>Mi anuncio</a>
                 </Link>
             </li>

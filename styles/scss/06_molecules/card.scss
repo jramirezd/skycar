@@ -37,6 +37,14 @@
                 color: $white;
                 font-size:$f-32;
             }
+            button{
+                position: absolute;
+                top: $s-8;
+                padding: $s-8;
+                right: $s-8;
+                background-color: rgba(0,0,0,0.40);
+                box-shadow: 0 2px 2px 0 rgba(51,65,80,0.03), 0 0 2px 0 rgba(51,65,80,0.03);
+            }
         }
         .property{
             margin: $s-8 0;
@@ -80,10 +88,11 @@
                 margin:$s-16;
                 position: relative;
                 padding-bottom: $s-16;
+                display: flex;
                 .price{
                     position: absolute;
                     right: $s-16;
-                    top: 0;
+                    top: 16px;
                     left: auto;
                     font-size: $f-32;
                     font-weight: bold;
@@ -94,6 +103,10 @@
                     position: initial;
                     img{
                         border-radius: 6px;
+                    }
+                    button{
+                        right: auto;
+                        left: 8px;
                     }
                 }
                 .content-box{
@@ -118,7 +131,7 @@
                 padding: $s-16;
                 text-align: right;
                 @include media('tablet'){
-                    display: block;
+                    //display: block;
                 }
                 button{
                     margin-top: 32px;

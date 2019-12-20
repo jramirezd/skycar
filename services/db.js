@@ -33,11 +33,11 @@ db.collection('users').doc(id).set({
 
 // Other db APIs ...
 
-async function addCar(idUser, setBrand, setModel, destacado, category, price, tags, kms, carYear, photo, longtext, provincia ) {
+async function addCar(id, setBrand, setModel, destacado, category, price, tags, kms, carYear, photo, longtext, provincia ) {
   const db = getDbInstance();
   db.collection('adv').doc()
   .set({
-    idUser: idUser,
+    id: id,
     brand: setBrand,
     model: setModel,
     destacado: destacado,
@@ -85,6 +85,13 @@ async function addFav(idUsr, idAdv) {
     favorites: firebase.firestore.FieldValue.arrayUnion(idAdv)
   }); 
 }
+async function removeFav(idUsr, idAdv) {
+  const db = getDbInstance();
+  db.collection('users').doc(idUsr)
+  .update({
+    favorites: firebase.firestore.FieldValue.arrayRemove(idAdv)
+  }); 
+}
 
 async function getField(idUsr, field) {
   const db = getDbInstance();
@@ -94,6 +101,7 @@ async function getField(idUsr, field) {
   }) 
   return result;
 }
+
 
 async function getItem(collection, itemId) {
   const db = getDbInstance();
@@ -116,6 +124,14 @@ async function getAll(collection) {
   return results;
 }
 
+async function getAdvUser(collection, field, itemId) {
+  const db = getDbInstance();
+  console.log(collection);
+  console.log(field);
+  console.log(itemId);
+  const document = await db.collection(collection).where(field, '==', itemId);
+  return document; 
+}
 
 async function getAllRealTime({ collection, filters, order, callback }) {
   const db = getDbInstance();
@@ -152,6 +168,8 @@ export {
   getItem,
   addRequest,
   getField,
+  removeFav,
+  getAdvUser,
   addFav,
   addCar,
   getAllRealTime,

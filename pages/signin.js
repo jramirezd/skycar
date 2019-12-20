@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import Router from "next/router";
 import Head from 'next/head';
+import Link from 'next/link';
 import { SignUpLink } from "./signup";
 import { PasswordForgetLink } from "./pw-forget";
 import { auth } from "../services";
-import Layout from "../components/layout";
+import LayoutUser from "../components/layoutUser";
+import logo from '../public/img/logo-white.svg';
 
 
 const SignInPage = () => (
@@ -12,13 +14,31 @@ const SignInPage = () => (
   <Head>
     <title>SkyCars - Iniciar sesión</title>
   </Head>
-  <Layout>
-  <main>
+  <LayoutUser>
+  <main className="login">
+      <aside className="hero-image image-log">
+         <div className="logo">
+            <Link href="/">
+              <a><img src={logo}/></a>
+            </Link>
+         </div>
+         <div className="text-box">
+          <h1>Compra y venta de coches de los Skycoders</h1>
+          <p>
+              Busca, encuentra y vende tu anterior vehículo. 
+          </p>
+        </div>
+      </aside>
+  <aside className="form-box">
     <SignInForm />
     <PasswordForgetLink />
-    <SignUpLink />
+    <div className="bottom-box">
+      <SignUpLink />
+    </div>
+  </aside>
+    
   </main>
-  </Layout>
+  </LayoutUser>
   </>
 );
 
@@ -61,6 +81,8 @@ class SignInForm extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
+      {error && <p>{error.message}</p>}
+      <fieldset>
         <input
           value={email}
           onChange={event =>
@@ -69,6 +91,8 @@ class SignInForm extends Component {
           type="text"
           placeholder="Email Address"
         />
+         </fieldset>
+         <fieldset>
         <input
           value={password}
           onChange={event =>
@@ -77,11 +101,12 @@ class SignInForm extends Component {
           type="password"
           placeholder="Password"
         />
-        <button disabled={isInvalid} type="submit">
-          Sign In
-        </button>
-
-        {error && <p>{error.message}</p>}
+        </fieldset>
+        <fieldset>
+          <button disabled={isInvalid} type="submit">
+            Iniciar sesión
+          </button>
+        </fieldset> 
       </form>
     );
   }

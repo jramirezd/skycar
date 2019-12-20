@@ -15,7 +15,7 @@ const TypeSearch = () => {
       <ul>
         {types.map(item => (
            <li key={item.id}>
-           <Link href="/">
+           <Link href={`/list?=${item.name}`}>
              <a alt={item.name} title={item.name}>
                 <div className="type-box">
                     <img src={`/categories/${item.name}.png`} />

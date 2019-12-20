@@ -16,9 +16,10 @@ export default function List() {
     <Layout>
       <main className="adv-lists">
         <Filter />
-         <section className="ads-items">
+         <section className="ads-items full">
             <CardItemHome Title="Resultados" TypeCard="full">
             {cars.map(item => (
+            <article className="card" key={item.id}>
             <Card 
                 brand={item.brand} 
                 model={item.model} 
@@ -31,6 +32,7 @@ export default function List() {
                 tag={item.tag} 
                 photo={item.photo} 
             />
+            </article>
             ))}
             </CardItemHome>   
          </section>

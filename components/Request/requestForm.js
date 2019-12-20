@@ -4,8 +4,9 @@ import { addRequest } from '../../services/db';
 import FormInput from '../FormInput';
 import FormTextarea from '../FormInput/FormTextarea';
 
-const ResquestForm = ({id}) => {
+const ResquestForm = ({id, user}) => {
     const [error, setError] = useState('');
+    const [submited, setSubmited] = useState(false);
     const [formData, setFormData] = useState({
         phone: '',
         email: '',
@@ -20,12 +21,16 @@ const ResquestForm = ({id}) => {
     if (!phone || !email || !text) {
       setError('Todos los campos son obligatorios');
     }
+    setSubmited(true);
   }
   
   return (
     <section className="add-car-form">
-    <div className="brands">
-    {error && <p>{error.message}</p>}
+    <div className="form">
+    <h3>Contactar con {user}</h3>
+    {error && <div className="error">{error}</div>}
+    {submited ? <div className="done">Solicitud enviada</div> : (
+
     <form onSubmit={onSubmit}>
   
         <FormInput 
@@ -44,12 +49,14 @@ const ResquestForm = ({id}) => {
           value={formData.text} 
           onChange={value => setFormData({ ...formData, text: value })} 
         />
-        
+        <fieldset>
         <Button type="submit">
-          Publicar
+          Contactar
         </Button>
+        </fieldset>
+        
       </form>
-    
+      )}
     </div>
   </section>
   );

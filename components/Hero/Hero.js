@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Button from '../Button'
+import { connect } from 'react-redux';
 
-const Hero = () => {
+const Hero = ({ authUser }) => {
   return (
     <div className="hero">
     <div className="text-box">
@@ -14,10 +14,15 @@ const Hero = () => {
           <Link href="/list">
             <a className="cta">Buscar</a>
           </Link>
-            <Button classItem={'cta-white'}>Vender</Button>
+          <Link href={authUser ? `/newadd?id=${authUser.uid}` : '/signin'}>
+            <a className="cta cta-white">Vender</a>
+          </Link>
         </div>
     </div>
     </div>
   );
 }
-export default Hero;
+const mapStateToProps = (state) => ({
+  authUser: state.sessionState.authUser
+});
+export default connect(mapStateToProps)(Hero);

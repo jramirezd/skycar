@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Link from "next/link";
 import Head from 'next/head';
-import Layout from "../components/layout";
+import LayoutUser from "../components/layoutUser";
+import logo from '../public/img/logo-white.svg';
 
 import { auth } from "../services";
 
@@ -10,11 +11,28 @@ const PasswordForgetPage = () => (
   <Head>
     <title>SkyCars - Recuperar Password</title>
   </Head>
-  <Layout>
-  <main>
+  <LayoutUser>
+  <main className="login">
+   <aside className="hero-image image-log">
+         <div className="logo">
+            <Link href="/">
+              <a><img src={logo}/></a>
+            </Link>
+         </div>
+         <div className="text-box">
+          <h1>Compra y venta de coches de los Skycoders</h1>
+          <p>
+              Busca, encuentra y vende tu anterior vehículo. 
+          </p>
+        </div>
+      </aside>
+  <aside className="form-box">
     <PasswordForgetForm />
+
+  </aside>
+    
   </main>
-  </Layout>
+  </LayoutUser>
   </>
 );
 
@@ -56,19 +74,24 @@ class PasswordForgetForm extends Component {
 
     return (
       <form onSubmit={this.onSubmit}>
+      <fieldset>
+      {error && <p>{error.message}</p>}
         <input
           value={this.state.email}
           onChange={event =>
             this.setState(updateByPropertyName("email", event.target.value))
           }
           type="text"
-          placeholder="Email Address"
+          placeholder="tu email"
         />
+        </fieldset>
+        <fieldset>
         <button disabled={isInvalid} type="submit">
-          Reset My Password
+         Resetear Password
         </button>
+        </fieldset>
 
-        {error && <p>{error.message}</p>}
+        
       </form>
     );
   }
@@ -77,7 +100,7 @@ class PasswordForgetForm extends Component {
 const PasswordForgetLink = () => (
   <p>
     <Link href="/pw-forget">
-      <a>Forgot Password?</a>
+      <a>¿Has olvidado tu contraseña?</a>
     </Link>
   </p>
 );

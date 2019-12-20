@@ -12,8 +12,8 @@ const NewAdd = () => {
   <title>SkyCars - Añade tu coche</title>
   </Head>
   <LayoutAdmin>
-  <main className="add-car">
-     <h1>Vende tu coche</h1>
+  <main className="add-car admin">
+     <h2>Publicar coche <span>Todos los campos son obligatorios</span></h2>
       <AddForm />
     </main>
     </LayoutAdmin>
