@@ -34,17 +34,18 @@ Simple y bueno 2 veces bueno.
 
 Ordenaremos la estructura de menos específico a más específico, separando los componentes para evitar tocar a la vez los mismos archivos, evitando así problemas de merge. 
 
-![ITCSS](https://github.com/jramirezd/skycar/blob/header/z-image/BBDD.png)
+![ITCSS](https://github.com/jramirezd/skycar/blob/header/z-image/ITCS.png)
 
 ### DATA MODEL
 El modelo de datos es el siguiente:
-![BBDD](https://github.com/jramirezd/skycar/blob/header//z-images/BBDD.png)
+![BBDD](https://github.com/jramirezd/skycar/blob/header/z-images/BBDD.png)
 
 ## DESIGN (screenshots)
-![Browse](https://github.com/jramirezd/skycar/blob/header//z-images/Browse.png)
+![Browse](https://github.com/jramirezd/skycar/blob/header/z-images/Browse.png)
 
 ### NEXT STEP
 - Actualizar BBDD.
+- Test y más test.
 - Validar los formularios.
 - Conectar con API para traer todas las características del vehiculo y poder listarlas, sin que el usuario tenga que rellenarlas. 
 - Actualizar los enlaces 
