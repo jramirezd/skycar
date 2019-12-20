@@ -38,10 +38,10 @@ Ordenaremos la estructura de menos específico a más específico, separando los
 
 ### DATA MODEL
 El modelo de datos es el siguiente:
-![BBDD](https://github.com/jramirezd/skycar/blob/header/z-images/BBDD.png)
+![BBDD](https://github.com/jramirezd/skycar/blob/header/z-image/BBDD.png)
 
 ## DESIGN (screenshots)
-![Browse](https://github.com/jramirezd/skycar/blob/header/z-images/Browse.png)
+![Browse](https://github.com/jramirezd/skycar/blob/header/z-image/Browse.png)
 
 ### NEXT STEP
 - Actualizar BBDD.
