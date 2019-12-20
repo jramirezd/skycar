@@ -1,6 +1,15 @@
-input{
+input, textarea, select{
     padding: 16px;
     border-radius: 4px;
-    width: 260px;
-    border: 1px solid #a2a2a2;
+    border: 1px solid $lines;
+    color: $text_1;
+    width: 100%;
+}
+fieldset{
+    margin: $s-24;
+    border: none;
+}
+select{
+    line-height: 24px;
+    height: 40px;
 }

@@ -1,6 +1,7 @@
 header{
     width: 100%;
     display: flex;
+    background-color: $white;
     .logo{
         margin: $s-8;
         img{
@@ -15,11 +16,122 @@ header{
             &.big-cta{
                 padding: $s-16 $s-24;
                 line-height: $s-32;
+                font-size: $f-12;
             }
             &.btn-transparent{
                 margin: 12px;
                 padding: $s-8 $s-16;
             }
         }
+
+ .menu-box{
+    display: block;
+    position: relative;
+    border-radius: 3px;
+    padding: $s-16;
+    @include media('tablet'){
+      border: none;
+      padding: 0;
+    }
+    input{
+     display: block;
+     width: 40px;
+     height: 32px;
+     position: absolute;
+     top: 0;
+     left: 0;
+     opacity: 0; 
+     z-index: 2; 
+     @include media('tablet'){
+       display: none;
+     }
+     &:checked ~ span{
+       opacity: 1;
+       transform: rotate(45deg) translate(-2px, -1px);
+       background: $text_2;
+     }
+     &:checked ~ span:nth-last-child(3){
+       opacity: 0;
+       transform: rotate(0deg) scale(0.2, 0.2);
+     }
+     &:checked ~ span:nth-last-child(2){
+       transform: rotate(-45deg) translate(0, -1px);
+     }
+     &:checked ~ ul{
+       transform: translate(-80%, 0);
+     }
+   }
+   span{
+     display: block;
+     width: 24px;
+     height: 3px;
+     margin-bottom: 4px;
+     position: relative;
+     background: $text_2;
+     border-radius: 3px;
+     z-index: 1;
+     transform-origin: 1px 0px;
+     @include media('tablet'){
+       display: none;
+     }
+     &:first-child{
+       transform-origin: 0% 0%;
+     }
+     &:nth-last-child(2){
+       transform-origin: 0% 100%;
+       margin-bottom: 0;
+     }
+   }
+  }
+  .menu{
+    position: absolute;
+    width: 240px;
+    height: 100vh;
+    margin-top: -34px;
+    padding-top: $s-48;
+    background: $text;
+    list-style-type: none;
+    transform-origin: 0% 0%;
+    transform: translate(100%, 0); 
+    transition: transform 0.1s cubic-bezier(0.77,0.2,0.05,1.0);
+    @include media('tablet'){
+       position: relative;
+       width: auto;
+       height: auto;
+       display: flex;
+       background-color: transparent;
+       padding: 0;
+       transform: none;
+       margin: 0;
+       transform: none;
+       transition: none;
+     }
+    li{
+     padding: $s-16 $s-24;
+     font-size: $s-16;
+     border-bottom: 1px solid $text_1;
+     &.log-cta{
+      margin: 0;
+      padding: 0;
+      margin-bottom: none;
+     
+    }
+     @include media('tablet'){
+        padding:0;
+        border-bottom: none;     
+    }
+     a{
+        color: $lines;
+        @include media('tablet'){
+            line-height: 32px;
+            padding: $s-16;
+            color: $text_1;
+        }
+        &.big-cta{
+          color: $lines;
+        }
+     }
+   }
+  }
     }
 }

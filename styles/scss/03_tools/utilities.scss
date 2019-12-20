@@ -1,16 +1,16 @@
 .hide-desktop {
-    @include media(tablet) {
+    @include media('tablet'){
         display: none !important;
     }
 }
 .hide-mobile {
     display: none !important;
-    @include media(tablet) {
+    @include media('tablet'){
         display: block !important;
     }
 
     &.flex {
-        @include media(tablet) {
+        @include media('tablet'){
             display: flex !important;
         }
     }
@@ -22,7 +22,8 @@
 }
 
 .bg-grey {
-	background-color: $text_1;
+    background-color: $bg_grey;
+    overflow: hidden;
 }
 
 .bg-grey-dark {

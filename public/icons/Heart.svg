@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+   
+    <defs>
+        <path d="M14.3250036,2.0100598 C12.5187536,0.491309803 9.72812864,0.719434803 8.00000364,2.4788098 C6.27187864,0.719434803 3.48125364,0.488184803 1.67500364,2.0100598 C-0.674996361,3.9881848 -0.331246361,7.2131848 1.34375364,8.9225598 L6.82500364,14.5069348 C7.13750364,14.8256848 7.55625364,15.0038098 8.00000364,15.0038098 C8.44687864,15.0038098 8.86250364,14.8288098 9.17500364,14.5100598 L14.6562536,8.9256848 C16.3281286,7.2163098 16.6781286,3.9913098 14.3250036,2.0100598 Z" id="path-1"></path>
+    </defs>
+    <g id="Icons/Solid/Heart" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Heart" fill-opacity="0" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="👷‍♂️Atoms/Colour/Dark-Grey/100%" mask="url(#mask-2)" fill="#ffffff">
+            <rect id="Rectangle" x="0" y="0" width="16" height="16"></rect>
+        </g>
+    </g>
+</svg>

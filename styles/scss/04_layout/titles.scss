@@ -1,0 +1,27 @@
+h2{
+    font-size: $f-18;
+    color: $text;
+    line-height: $f-22;
+    font-weight: 400;
+    float: left;
+    & + button{
+        float: right;
+        padding: 0;
+        background-color: transparent;
+        color: $pc;
+        font-size: $f-14;
+        background-image: url('/icons/Long-arrow-right.svg');
+        background-repeat: no-repeat;
+        background-position: right;
+        padding-right: 16px;
+        background-size: 12px;
+        margin-top: $s-4;
+        @include media('tablet'){
+            &:hover{
+            background-color: transparent;
+            color: $pc;
+            opacity: 0.6;
+             }
+        }
+    }
+}

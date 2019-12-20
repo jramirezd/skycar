@@ -18,3 +18,9 @@ a{
         text-align: right;
     }
 }
+.center-box{
+    @include media('tablet'){
+        max-width: $desktop;
+        margin: 0 auto;
+    }
+}

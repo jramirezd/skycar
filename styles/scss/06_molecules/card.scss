@@ -1,0 +1,144 @@
+.card-box{
+    margin: $s-16 0;
+    article{
+        background-color: $white;
+        margin-bottom: $s-24;
+        @include media('tablet'){
+            display: flex;
+        }
+        a{
+            color: $text;
+        }
+        .tags{
+            margin:$s-4 0;
+            span{
+                display: inline-block;
+                background-color: $lines;
+                padding: 6px $s-8;
+                margin-right: $s-4;
+                border-radius: 6px;
+                font-size: $f-12;
+                line-height: $f-14;
+            }
+        }
+        .image{
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 4px 4px 0 0;
+            img{
+                margin: 0;
+                width: 100%;
+            }
+            .price{
+                position: absolute;
+                bottom: 16px;
+                left: 16px;
+                color: $white;
+                font-size:$f-32;
+            }
+            button{
+                position: absolute;
+                top: $s-8;
+                padding: $s-8;
+                right: $s-8;
+                background-color: rgba(0,0,0,0.40);
+                box-shadow: 0 2px 2px 0 rgba(51,65,80,0.03), 0 0 2px 0 rgba(51,65,80,0.03);
+            }
+        }
+        .property{
+            margin: $s-8 0;
+            overflow: hidden;
+            span{
+                font-size: $f-12;
+                color: $text_1;
+                display: block;
+                line-height: $s-16;
+                margin-top: $s-4;
+            }
+        }
+        .contact-box{
+            display: none;
+        }
+        .content-box{
+            padding: $s-16;
+        }
+    }
+    &.lite{
+        @include media('tablet'){
+            display: flex;
+            justify-content: space-between;
+        }
+        article{
+            box-shadow: 0 2px 2px 0 rgba(51,65,80,0.04);
+            border-radius: 4px;
+            flex-direction: column;
+            @include media('tablet'){
+                width: calc(96%/4);
+                &:hover{
+                    box-shadow: 0 0 6px 0 rgba(51,65,80, 0.2);
+                }
+            }
+        }
+    }
+    &.full{
+        article{
+            @include media('tablet'){
+                border-bottom: 1px solid $lines;
+                margin:$s-16;
+                position: relative;
+                padding-bottom: $s-16;
+                display: flex;
+                .price{
+                    position: absolute;
+                    right: $s-16;
+                    top: 16px;
+                    left: auto;
+                    font-size: $f-32;
+                    font-weight: bold;
+                    color: $text;
+                }
+                .image{
+                    width: 260px;
+                    position: initial;
+                    img{
+                        border-radius: 6px;
+                    }
+                    button{
+                        right: auto;
+                        left: 8px;
+                    }
+                }
+                .content-box{
+                        margin: 0 $s-16;
+                }
+                .property{
+                    float: left;
+                    margin-right: $s-16;
+                }
+            }
+        
+        
+            a{
+                h3{
+                    color: $pc;
+                }
+            }
+            .contact-box{
+                border-left: 1px solid $lines;
+                width: 160px;
+                margin-left: auto;
+                padding: $s-16;
+                text-align: right;
+                @include media('tablet'){
+                    //display: block;
+                }
+                button{
+                    margin-top: 32px;
+                    padding: 12px $s-16;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,92 @@
+main{
+    &.login{
+        margin:0;
+        padding: 0;
+        @include media('tablet'){
+            display: flex;
+            max-width: initial;
+        }
+        .image-log{
+            background-image: url('/LogInImage.png');
+        }
+        .image{
+            background-image: url('/SignUpImage.png');
+        }
+        .hero-image{
+            position: relative;
+            height: 40vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            &.image{
+                height: 20vh;
+                @include media('tablet'){
+                    height: 100vh;
+                }
+
+            }
+            @include media('tablet'){
+                height: 100vh;
+                width: 50%;
+            }
+            .text-box{
+                position: absolute;
+                bottom: $s-24;
+                left: $s-24;
+            }
+            h1{
+                color: $white;
+                font-size: $f-18;
+                line-height: $f-24;
+            }
+            p{
+                color: $text_1;
+                font-size: $f-14;
+                margin-top: $s-8;
+            }
+        }
+        .logo{
+            padding:$s-24;
+            text-align: center;
+            width: 100%;
+        }
+        .form-box{
+            background-color: white;
+            border-radius: 6px;
+            padding: $s-24;
+            height: calc(60vh - 60px);
+            overflow-y: scroll;
+            position: relative;
+            &.signup{
+                height: 80vh;
+                margin-bottom: 60px;
+                
+                @include media('tablet'){
+                    height: calc(100vh - 60px);
+                }
+            }
+            @include media('tablet'){
+                height: 100vh;
+                width: 50%;
+                padding: $s-48;
+            }
+            fieldset{
+                padding: $s-8 0;
+                margin:0 0 $s-16 0;
+            }
+            .bottom-box{
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                right: 0;
+                padding: $s-24;
+                text-align: center;
+                border-top: 1px solid $lines;
+                background-color: white;
+                @include media('tablet'){
+                    width: 50%;
+                }
+            }
+        }
+    }
+}

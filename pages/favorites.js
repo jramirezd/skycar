@@ -1,10 +1,48 @@
-import Layout from '../components/layout';
+import React, { useState, useEffect } from 'react';
+import LayoutAdmin from "../components/layoutAdmin";
+import { useRouter } from 'next/router'
+import Head from 'next/head';
+import CardItemHome from '../components/Cards/CardItemHome'
+import Card from '../components/Cards/Card'
+import useGetAdv from '../logic/useGetAdv';
+import useGetFavs from '../logic/useGetFavs';
 
-export default function Index() {
+export default function Favorites() {
+  const router = useRouter();
+  const { id } = router.query;
+  const user = useGetAdv('users', id); 
+  const favItems = user[0].favorites;
+  const cars = useGetFavs('adv', favItems); 
+
   return (
-    <Layout>
-        <h1>Pelis favoritas</h1>
-        <p>Sed irure fistro diodeno esse ese pedazo de benemeritaar. Nisi a peich nostrud minim qui no te digo trigo por no llamarte Rodrigor incididunt está la cosa muy malar adipisicing jarl. Diodeno ese hombree tiene musho peligro ahorarr ese que llega. La caidita sed me cago en tus muelas ut dolor eiusmod tiene musho peligro elit dolor dolor te va a hasé pupitaa.</p>
-    </Layout>
+    <>
+     <Head>
+        <title>SkyCars - Todos los coches a tu alcance</title>
+    </Head>
+    <LayoutAdmin>
+      <main className="adv-lists">
+         <section className="ads-items">
+            <CardItemHome Title="Resultados" TypeCard="full">
+            {cars.map(item => (
+               <article className="card" key={item.id}>
+            <Card 
+                brand={item.brand} 
+                model={item.model} 
+                id={item.id} 
+                kms={item.kms} 
+                price={item.price}
+                location={item.location} 
+                year={item.year} 
+                category={item.category} 
+                tag={item.tag} 
+                photo={item.photo} 
+            />
+            </article>
+            ))}
+            </CardItemHome>   
+         </section>
+      </main>
+    </LayoutAdmin>
+    </>
   );
 }

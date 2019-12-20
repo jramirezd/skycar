@@ -1,4 +1,42 @@
 main{
     margin-top: 34px;
-    padding: 24px;
+    padding: $s-16;
+    @include media('tablet'){
+        max-width: $desktop;
+        margin: 0 auto;
+    }
+    &.adv-lists{
+        margin-top: 0;
+        @include media('tablet'){
+            display: flex;
+        }
+        section{
+            border-radius: 6px;
+            box-shadow: 0 2px 2px 0 rgba(51,65,80,0.03);
+            margin-top: $s-36;
+            &.ads-items{
+                @include media('tablet'){
+                    background-color: $white;
+                    width: calc(100% - 224px);
+                }
+            }
+        }
+        .cards-home{
+            .title-box{
+                overflow: hidden;
+                margin: 0;
+                @include media('tablet'){
+                    border-bottom: 1px solid $lines;
+                    padding: $s-16;
+                }
+                h2{
+                    font-size: $f-24;
+                    @include media('tablet'){
+                    font-size: $f-16;
+                    font-weight: bold;
+                    }
+                } 
+            }
+        }
+    }
 }

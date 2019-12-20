@@ -1,0 +1,58 @@
+.admin{
+    background-color: white;
+    overflow: hidden;
+    border-radius: 6px;
+    @include media('tablet'){
+        margin: 24px auto;
+        padding: 0;
+    }
+    h2{
+        border-bottom: 1px solid $lines;
+        width: 100%;
+        padding: 24px;
+        font-size: $f-18;
+        font-weight: bold;
+        span{
+            display: block;
+            color: $text_1;
+            font-size: $f-16;
+            font-weight: 400;
+        }
+    }
+    .brands{
+        fieldset{
+            padding-top: 16px;
+            select{
+                width: 280px;
+            }
+        }
+    }
+    .property{
+        margin: $s-8 $s-24;
+        overflow: hidden;
+        span{
+            font-size: $f-12;
+            color: $text_1;
+            display: block;
+            line-height: $s-16;
+            margin-top: $s-4;
+        }
+    }
+    h3{
+        width: 100%;
+        padding: 24px 0 24px 24px;
+        font-size: $f-18;
+        font-weight: bold;
+        margin-top: 16px;
+        border-top: 1px solid $lines;
+    }
+    .bottom-box{
+        margin-bottom: 24px;
+        fieldset{
+            margin: 0 12px;
+            input{
+                max-width: 280px;
+            }
+        }
+    }
+}

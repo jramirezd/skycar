@@ -1,50 +1,45 @@
-import React, { useState, useEffect } from 'react';
-import MovieApi from '../services/MovieApi';
+import React from 'react';
 import Layout from '../components/layout';
-import Head from 'next/head'
+import Head from 'next/head';
+import Hero from '../components/Hero';
+import Brands from '../components/Brands'
+import TypeSearch from '../components/TypeSearch'
+import CardItemHome from '../components/Cards/CardItemHome'
+import Card from '../components/Cards/Card'
+import useGetAll from '../logic/useGetAll';
 
 export default function Index() {
-  const [movies, setMovies] = useState([]);
-
-  const parseMovies = (array) => {
-      const movies = array.results.map( (movie)=>{
-          return {
-              path: movie.poster_path,
-              title: movie.title,
-              id: movie.id                
-          }
-      })
-      return movies;
-  }
-
-  //get movies function in case no search string was provided... 
-  const getMovies = async (category, page_number=1) => {
-      const data = await MovieApi.getMovies(category,page_number);
-      const movies = parseMovies(data);
-      console.log(movies);
-      setMovies(movies);
-  }
-
-  const onSearch = () => {
-        getMovies('top_rated'); 
-}
-
-  useEffect(()=>{onSearch()}, []);
+  const [cars] = useGetAll('adv');
   return (
     <>
      <Head>
     <title>SkyCars - La plataforma de carcharing de los Skylabers</title>
     </Head>
     <Layout>
-      <h1>Pelis Pelis</h1>
-      <p>
-      Lorem fistrum sexuarl se calle ustée elit condemor officia. Diodenoo diodeno mamaar incididunt de la pradera te voy a borrar el cerito officia ut ut apetecan por la gloria de mi madre. Jarl ex pecador aute aute laboris ullamco officia.
-      </p>
-      <ul className="movieList">
-        {movies.map(function(movie) {
-        return <li key={movie.id}>{movie.title}</li>;
-        })}
-       </ul>
+      <Hero />
+      <main>
+        <Brands/>
+        <TypeSearch/>
+        <CardItemHome Title="Los más nuevos" SubTitle="Adelántate a los otros usuarios, estos los acaban de poner!" TypeCard="lite">
+        {cars.slice(0,4).map(item => (
+           <article className="card" key={item.id}>
+           <Card 
+              brand={item.brand} 
+              model={item.model} 
+              id={item.id} 
+              kms={item.kms} 
+              price={item.price}
+              location={item.location} 
+              year={item.year} 
+              category={item.category} 
+              tag={item.tag} 
+              photo={item.photo} 
+              favorite="true" 
+           />
+           </article>
+          ))}
+        </CardItemHome>
+      </main>
     </Layout>
     </>
   );
