@@ -31,7 +31,7 @@ export default function Detail() {
               photo={car.photo} 
            />
         </section>
-        <aside>
+        <aside class="r-side">
           <div className="more-info">
             <h1>{car.brand} {car.model} {car.year}</h1>
             <div className="tags">

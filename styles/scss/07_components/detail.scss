@@ -9,9 +9,10 @@
             width: calc(100% - 260px);
         }
     }
-    .aside{
+    .r-side{
         @include media('tablet'){
-            max-width: 260px;
+            width: 360px;
+            max-width: 360px;
         }
     }
     .card{

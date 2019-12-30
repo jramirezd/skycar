@@ -12,7 +12,7 @@ La lógica de búsqueda es premiar los anuncios con mejor estado. Mientras mas c
 | Transversal      | Server-side | Client-side | Testing            |
 | ---------------- | ----------- | ----------- | -------------      |
 | Javascript (ES6) | Firebase    | NEXTJS      | Jest(NEXT STEP)    |
-| HTML             |             | CSS3        | Enzime(NEXT STEP)  |
+| HTML             |             | CSS3        |                    |
 |                  |             | SASS        |                    |
 
 ### UML Diagram (User Cases)
@@ -50,3 +50,4 @@ El modelo de datos es el siguiente:
 - Conectar con API para traer todas las características del vehiculo y poder listarlas, sin que el usuario tenga que rellenarlas. 
 - Actualizar los enlaces 
 - Actualizar el score de los listados para ordenar por ello.
+- Buscador abierto.
